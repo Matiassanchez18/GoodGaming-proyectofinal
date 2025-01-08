@@ -14,58 +14,71 @@ const Juegos = () => {
     handleSubmit,
     formState: { errors },
     reset,
-    setValue,
   } = useForm();
 
   const [Juegos, setJuegos] = useState([]);
+  const [JuegosFiltradosBusqueda, setJuegosFiltradosBusqueda] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const enviadoForm = (data) => {
     console.log(data);
-    reset();
+    
+    if (data.NombreJuego) {
+      const filtered = Juegos.filter((juego) =>
+        juego.Juego.toLowerCase().includes(data.NombreJuego.toLowerCase())
+      );
+      setJuegosFiltradosBusqueda(filtered);
+    } else {
+      
+      setJuegosFiltradosBusqueda(Juegos);
+    }
+    reset(); 
   };
 
   useEffect(() => {
-    consultarAPI();
+    consultarAPI(); 
   }, []);
 
   const consultarAPI = async () => {
+    setLoading(true);
     const respuesta = await listarProductosAPI();
     if (respuesta.status === 200) {
       const datos = await respuesta.json();
       setJuegos(datos);
+      setJuegosFiltradosBusqueda(datos);
     } else {
-      alert("Ocurrio un error, intenta mas tarde");
+      alert("Ocurrió un error, intenta más tarde");
     }
+    setLoading(false);
   };
 
   return (
     <section>
       <article className="container mt-5 border-bottom p-3">
         <div className="d-flex justify-content-between align-items-center">
-          <h2>Catálogos de Juegos</h2>
+          <h2>Catálogo de Juegos</h2>
 
           <Form onSubmit={handleSubmit(enviadoForm)}>
             <Row>
               <Col xs="auto">
                 <Form.Control
                   type="text"
-                  placeholder="Search"
+                  placeholder="Buscar por nombre"
                   className="mr-sm-2"
                   {...register("NombreJuego", {
-                    required: "Este campo es obligatorio",
                     minLength: {
                       value: 3,
-                      message: "El minimo de caracteres es de 3",
+                      message: "El mínimo de caracteres es de 3",
                     },
                     maxLength: {
                       value: 100,
-                      message: "El maximo de caracteres permitido es de 100",
+                      message: "El máximo de caracteres permitido es de 100",
                     },
                   })}
                 />
               </Col>
               <Col xs="auto">
-                <Button type="submit">Submit</Button>
+                <Button type="submit">Buscar</Button>
               </Col>
             </Row>
             <Form.Text className="text-danger mt-2">
@@ -76,36 +89,45 @@ const Juegos = () => {
       </article>
 
       <article className="container mt-4">
-        <div className="row">
-          {Juegos.map((juegos) => (
-            <div  key={juegos.id} className="col-6 col-lg-3 col-md-3 mt-3">
-              <Card className="product-card h-100 rounded">
-                <Card.Img
-                  variant="top"
-                  src={juegos.imagen}
-                  alt="God of War"
-                  className=" rounded-top"
-                />
-                <Card.Body>
-                  <ul className="list-unstyled">
-                    <li className="fs-5">
-                      <b>{juegos.Juego}</b>
-                    </li>
-                    <li className="text-success">
-                      <b>{juegos.precio}</b>
-                    </li>
-                  </ul>
-                  <Button variant="primary" className="w-100">
-                    Ver más
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <p>Cargando...</p>
+        ) : (
+          <div className="row">
+            {JuegosFiltradosBusqueda.length > 0 ? (
+              JuegosFiltradosBusqueda.map((juego) => (
+                <div key={juego.id} className="col-6 col-lg-3 col-md-3 mt-3">
+                  <Card className="product-card h-100 rounded">
+                    <Card.Img
+                      variant="top"
+                      src={juego.imagen}
+                      alt={juego.Juego}
+                      className="rounded-top"
+                    />
+                    <Card.Body>
+                      <ul className="list-unstyled">
+                        <li className="fs-5">
+                          <b>{juego.Juego}</b>
+                        </li>
+                        <li className="text-success">
+                          <b>{juego.precio}</b>
+                        </li>
+                      </ul>
+                      <Button variant="primary" className="w-100">
+                        Ver más
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </div>
+              ))
+            ) : (
+              <p>No se encontraron juegos</p>
+            )}
+          </div>
+        )}
       </article>
     </section>
   );
 };
 
 export default Juegos;
+
