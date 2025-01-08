@@ -77,7 +77,12 @@
     display: none;
   }
   
-  
+  /* Administrador  */
+  .ImgAministrador{
+    max-height: 100px;
+    max-width: 130px;
+    object-fit: cover;
+  } 
   
 
   

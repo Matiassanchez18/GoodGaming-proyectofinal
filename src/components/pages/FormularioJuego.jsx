@@ -1,6 +1,10 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Button from "react-bootstrap/Button";
 
-const Formulario = () => {
+const FormularioJuego = () => {
   const {
     register,
     handleSubmit,
@@ -181,4 +185,4 @@ const Formulario = () => {
   );
 };
 
-export default Formulario;
+export default FormularioJuego;

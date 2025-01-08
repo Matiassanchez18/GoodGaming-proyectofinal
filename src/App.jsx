@@ -7,7 +7,7 @@ import Footer from "./components/pages/common/Footer";
 import Inicio from "./components/pages/Inicio";
 import Juegos from "./components/pages/Juegos";
 import Administrador from "./components/pages/Administrador";
-
+import FormularioJuego from "./components/pages/FormularioJuego";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
           <Route path="/" element={<Inicio></Inicio>}/>
           <Route path="/Juegos" element={<Juegos></Juegos>}/>
           <Route path="/Administrador" element={<Administrador></Administrador>}/>
+          <Route path="/Administrador/FormularioJuego" element={<FormularioJuego></FormularioJuego>}/>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
