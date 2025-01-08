@@ -8,8 +8,12 @@ import Inicio from "./components/pages/Inicio";
 import Juegos from "./components/pages/Juegos";
 import Administrador from "./components/pages/Administrador";
 import FormularioJuego from "./components/pages/FormularioJuego";
+import Login from "./components/pages/Login";
+import { useForm } from "react-hook-form";
 
 function App() {
+
+
   return (
     <>
       <BrowserRouter>
@@ -19,6 +23,7 @@ function App() {
           <Route path="/Juegos" element={<Juegos></Juegos>}/>
           <Route path="/Administrador" element={<Administrador></Administrador>}/>
           <Route path="/Administrador/FormularioJuego" element={<FormularioJuego></FormularioJuego>}/>
+          <Route path="/Login" element={<Login></Login>}/>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
