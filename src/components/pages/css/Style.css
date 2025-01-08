@@ -23,3 +23,28 @@
     padding: 10px;
     text-align: center;
   }
+
+  .imagen {
+    width: 100%;              
+    height: 500px;            
+    object-fit: cover;         
+  }
+  
+
+
+
+
+/* media para celulares */
+
+  @media (max-width: 768px) {
+    .imagen {
+      height: 300px;          
+    }
+  }
+  
+  
+  @media (max-width: 576px) {
+    .imagen {
+      height: 250px;           
+    }
+  }
