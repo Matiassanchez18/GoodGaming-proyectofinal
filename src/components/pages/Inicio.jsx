@@ -231,7 +231,7 @@ const Inicio = () => {
         <article className="container mt-5 ">
           <div className="d-flex justify-content-between border-bottom align-items-center">
             <h2 className="mb-0">Juegos PS4</h2>
-            <Link to="#" className="text-decoration-none ">
+            <Link to={"/Juegos"} className="text-decoration-none ">
               <h4 className="mb-0">Ver más</h4>
             </Link>
           </div>
