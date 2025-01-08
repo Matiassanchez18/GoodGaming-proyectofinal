@@ -27,7 +27,12 @@
   .imagen {
     width: 100%;              
     height: 500px;            
-    object-fit: cover;         
+    object-fit: cover;     
+    transition: transform 0.3s ease-in-out;    
+  }
+
+  .imagen:hover {
+    transform: scale(1.1);      
   }
   
 
