@@ -1,19 +1,10 @@
 {
   "productos": [
-    {
-      "uego": "god",
-      "precio": "40.000",
-      "imagen": "https://images.pexels.com/photos/17612776/pexels-photo-17612776/free-photo-of-comida-resfriado-frio-sano.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "Categoria": "RPG",
-      "breve": "adgawdgusghdjahuwdh",
-      "amplio": "ajwudguawhdusgdugwudghawfwadwda",
-      "Desarrollador": "Logan Paul",
-      "id": 0
-    },
+
     {
       "Juego": "ARK envolved",
-      "precio": "2342",
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpma4nbmAVA11metwvgkjPZNhhAHI0OS7w_Q&s",
+      "precio": "20.000",
+      "imagen": "https://juegosdigitalesargentina.com/files/images/productos/1576686032-ark-survival-evolved-ps4.jpg",
       "Genero": [
         "Acción"
       ],
@@ -23,9 +14,9 @@
       "id": 1
     },
     {
-      "Juego": "ARK envolved",
-      "precio": "1242",
-      "imagen": "http://localhost:5173/administrador/FormularioProducto",
+      "Juego": "Recident evil",
+      "precio": "60.000",
+      "imagen": "https://www.vidrieraonline.com.ar/img-load/img/221/260/1/e865e34e39227944864fd3e4ffdf78da.jpg",
       "Genero": [
         "Simulación"
       ],

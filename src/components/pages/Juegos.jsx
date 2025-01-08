@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { listarProductosAPI } from "../helpers/queries";
 
 const Juegos = () => {
   const {
@@ -16,12 +17,26 @@ const Juegos = () => {
     setValue,
   } = useForm();
 
-  const [nombreJuegos, setnombresJuegos] = useState([]);
+  const [Juegos, setJuegos] = useState([]);
 
   const enviadoForm = (data) => {
     console.log(data);
-    reset()
-}
+    reset();
+  };
+
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+
+  const consultarAPI = async () => {
+    const respuesta = await listarProductosAPI();
+    if (respuesta.status === 200) {
+      const datos = await respuesta.json();
+      setJuegos(datos);
+    } else {
+      alert("Ocurrio un error, intenta mas tarde");
+    }
+  };
 
   return (
     <section>
@@ -54,204 +69,39 @@ const Juegos = () => {
               </Col>
             </Row>
             <Form.Text className="text-danger mt-2">
-            {errors.NombreJuego?.message}
-          </Form.Text>
+              {errors.NombreJuego?.message}
+            </Form.Text>
           </Form>
         </div>
       </article>
 
       <article className="container mt-4">
         <div className="row">
-          <div className="col-12 col-lg-3 col-md-3 mt-3">
-            <Card className="product-card h-100 rounded">
-              <Card.Img
-                variant="top"
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="God of War"
-                className=" rounded-top"
-              />
-              <Card.Body>
-                <ul className="list-unstyled">
-                  <li className="fs-5">
-                    <b>God of War</b>
-                  </li>
-                  <li className="text-success">
-                    <b>Precio: 2500</b>
-                  </li>
-                </ul>
-                <Button variant="primary" className="w-100">
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-12 col-lg-3 col-md-3 mt-3">
-            <Card className="product-card h-100 rounded">
-              <Card.Img
-                variant="top"
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="God of War"
-                className=" rounded-top"
-              />
-              <Card.Body>
-                <ul className="list-unstyled">
-                  <li className="fs-5">
-                    <b>God of War</b>
-                  </li>
-                  <li className="text-success">
-                    <b>Precio: 2500</b>
-                  </li>
-                </ul>
-                <Button variant="primary" className="w-100">
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-12 col-lg-3 col-md-3 mt-3">
-            <Card className="product-card h-100 rounded">
-              <Card.Img
-                variant="top"
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="God of War"
-                className=" rounded-top"
-              />
-              <Card.Body>
-                <ul className="list-unstyled">
-                  <li className="fs-5">
-                    <b>God of War</b>
-                  </li>
-                  <li className="text-success">
-                    <b>Precio: 2500</b>
-                  </li>
-                </ul>
-                <Button variant="primary" className="w-100">
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-12 col-lg-3 col-md-3 mt-3">
-            <Card className="product-card h-100 rounded">
-              <Card.Img
-                variant="top"
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="God of War"
-                className=" rounded-top"
-              />
-              <Card.Body>
-                <ul className="list-unstyled">
-                  <li className="fs-5">
-                    <b>God of War</b>
-                  </li>
-                  <li className="text-success">
-                    <b>Precio: 2500</b>
-                  </li>
-                </ul>
-                <Button variant="primary" className="w-100">
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-12 col-lg-3 col-md-3 mt-3">
-            <Card className="product-card h-100 rounded">
-              <Card.Img
-                variant="top"
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="God of War"
-                className=" rounded-top"
-              />
-              <Card.Body>
-                <ul className="list-unstyled">
-                  <li className="fs-5">
-                    <b>God of War</b>
-                  </li>
-                  <li className="text-success">
-                    <b>Precio: 2500</b>
-                  </li>
-                </ul>
-                <Button variant="primary" className="w-100">
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-12 col-lg-3 col-md-3 mt-3">
-            <Card className="product-card h-100 rounded">
-              <Card.Img
-                variant="top"
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="God of War"
-                className=" rounded-top"
-              />
-              <Card.Body>
-                <ul className="list-unstyled">
-                  <li className="fs-5">
-                    <b>God of War</b>
-                  </li>
-                  <li className="text-success">
-                    <b>Precio: 2500</b>
-                  </li>
-                </ul>
-                <Button variant="primary" className="w-100">
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-12 col-lg-3 col-md-3 mt-3">
-            <Card className="product-card h-100 rounded">
-              <Card.Img
-                variant="top"
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="God of War"
-                className=" rounded-top"
-              />
-              <Card.Body>
-                <ul className="list-unstyled">
-                  <li className="fs-5">
-                    <b>God of War</b>
-                  </li>
-                  <li className="text-success">
-                    <b>Precio: 2500</b>
-                  </li>
-                </ul>
-                <Button variant="primary" className="w-100">
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-
-          <div className="col-12 col-lg-3 col-md-3 mt-3">
-            <Card className="product-card h-100 rounded">
-              <Card.Img
-                variant="top"
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="God of War"
-                className=" rounded-top"
-              />
-              <Card.Body>
-                <ul className="list-unstyled">
-                  <li className="fs-5">
-                    <b>God of War</b>
-                  </li>
-                  <li className="text-success">
-                    <b>Precio: 2500</b>
-                  </li>
-                </ul>
-                <Button variant="primary" className="w-100">
-                  Ver más
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
+          {Juegos.map((juegos) => (
+            <div  key={juegos.id} className="col-6 col-lg-3 col-md-3 mt-3">
+              <Card className="product-card h-100 rounded">
+                <Card.Img
+                  variant="top"
+                  src={juegos.imagen}
+                  alt="God of War"
+                  className=" rounded-top"
+                />
+                <Card.Body>
+                  <ul className="list-unstyled">
+                    <li className="fs-5">
+                      <b>{juegos.Juego}</b>
+                    </li>
+                    <li className="text-success">
+                      <b>{juegos.precio}</b>
+                    </li>
+                  </ul>
+                  <Button variant="primary" className="w-100">
+                    Ver más
+                  </Button>
+                </Card.Body>
+              </Card>
+            </div>
+          ))}
         </div>
       </article>
     </section>
