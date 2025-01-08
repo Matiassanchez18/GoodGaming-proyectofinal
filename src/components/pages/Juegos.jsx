@@ -5,35 +5,12 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
-import { useForm } from "react-hook-form";
 import { listarProductosAPI } from "../helpers/queries";
 
 const Juegos = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
-
   const [Juegos, setJuegos] = useState([]);
-  const [JuegosFiltradosBusqueda, setJuegosFiltradosBusqueda] = useState([]);
+  const [JuegosFlitradosBusqueda, setJuegosFlitradosBusqueda] = useState([]); 
   const [loading, setLoading] = useState(false);
-
-  const enviadoForm = (data) => {
-    console.log(data);
-    
-    if (data.NombreJuego) {
-      const filtered = Juegos.filter((juego) =>
-        juego.Juego.toLowerCase().includes(data.NombreJuego.toLowerCase())
-      );
-      setJuegosFiltradosBusqueda(filtered);
-    } else {
-      
-      setJuegosFiltradosBusqueda(Juegos);
-    }
-    reset(); 
-  };
 
   useEffect(() => {
     consultarAPI(); 
@@ -44,12 +21,24 @@ const Juegos = () => {
     const respuesta = await listarProductosAPI();
     if (respuesta.status === 200) {
       const datos = await respuesta.json();
-      setJuegos(datos);
-      setJuegosFiltradosBusqueda(datos);
+      setJuegos(datos); 
+      setJuegosFlitradosBusqueda(datos);
     } else {
       alert("Ocurrió un error, intenta más tarde");
     }
     setLoading(false);
+  };
+
+  const busquedaDinamica = (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+    if (searchTerm === "") {
+      setJuegosFlitradosBusqueda(Juegos);
+    } else {
+      const filtered = Juegos.filter((juego) =>
+        juego.Juego.toLowerCase().includes(searchTerm)
+      );
+      setJuegosFlitradosBusqueda(filtered);
+    }
   };
 
   return (
@@ -58,32 +47,17 @@ const Juegos = () => {
         <div className="d-flex justify-content-between align-items-center">
           <h2>Catálogo de Juegos</h2>
 
-          <Form onSubmit={handleSubmit(enviadoForm)}>
+          <Form>
             <Row>
               <Col xs="auto">
                 <Form.Control
                   type="text"
                   placeholder="Buscar por nombre"
                   className="mr-sm-2"
-                  {...register("NombreJuego", {
-                    minLength: {
-                      value: 3,
-                      message: "El mínimo de caracteres es de 3",
-                    },
-                    maxLength: {
-                      value: 100,
-                      message: "El máximo de caracteres permitido es de 100",
-                    },
-                  })}
+                  onChange={busquedaDinamica} 
                 />
               </Col>
-              <Col xs="auto">
-                <Button type="submit">Buscar</Button>
-              </Col>
             </Row>
-            <Form.Text className="text-danger mt-2">
-              {errors.NombreJuego?.message}
-            </Form.Text>
           </Form>
         </div>
       </article>
@@ -93,8 +67,8 @@ const Juegos = () => {
           <p>Cargando...</p>
         ) : (
           <div className="row">
-            {JuegosFiltradosBusqueda.length > 0 ? (
-              JuegosFiltradosBusqueda.map((juego) => (
+            {JuegosFlitradosBusqueda.length > 0 ? (
+              JuegosFlitradosBusqueda.map((juego) => (
                 <div key={juego.id} className="col-6 col-lg-3 col-md-3 mt-3">
                   <Card className="product-card h-100 rounded">
                     <Card.Img
@@ -130,4 +104,5 @@ const Juegos = () => {
 };
 
 export default Juegos;
+
 
