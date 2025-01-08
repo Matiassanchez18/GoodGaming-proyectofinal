@@ -217,18 +217,33 @@ const FormularioJuego = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Categoria del producto*</Form.Label>
+          <Form.Label>Juego de la semana?*</Form.Label>
           <Form.Select
             {...register("JuegoDeSemana", {
               required: "Este campo es obligatorio",
             })}
           >
-            <option value="">Juego de la semana?</option>
             <option value="true">si</option>
             <option value="false">no</option>
           </Form.Select>
           <Form.Text className="text-danger mt-2">
             {errors.JuegoDeSemana?.message}
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label>Tipo de Consola*</Form.Label>
+          <Form.Select
+            {...register("Consola", {
+              required: "Este campo es obligatorio",
+            })}
+          >
+            <option value="ps4">ps4</option>
+            <option value="ps5">ps5</option>
+            <option value="Nintendo">Nintendo</option>
+          </Form.Select>
+          <Form.Text className="text-danger mt-2">
+            {errors.Consola?.message}
           </Form.Text>
         </Form.Group>
 

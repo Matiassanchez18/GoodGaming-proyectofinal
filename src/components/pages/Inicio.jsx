@@ -51,6 +51,10 @@ const Inicio = () => {
     (juego) => juego.JuegoDeSemana === "true"
   );
 
+  const juegosFiltradosPS4 = juegosSemanales.filter(
+    (juego) => juego.Consola === "ps4"
+  );
+
   return (
     <div>
       <section>
@@ -167,149 +171,36 @@ const Inicio = () => {
               ref={carouselRef2}
               className="d-flex overflow-auto mt-4 card-container"
             >
-              <div className="col-12 col-lg-3 col-md-3 mt-3">
-                <Card className="product-card h-100 rounded">
-                  <Card.Img
-                    variant="top"
-                    src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                    alt="God of War"
-                    className=" rounded-top"
-                  />
-                  <Card.Body>
-                    <ul className="list-unstyled">
-                      <li className="fs-5">
-                        <b>God of War</b>
-                      </li>
-                      <li className="text-success">
-                        <b>Precio: 2500</b>
-                      </li>
-                    </ul>
-                    <Button variant="primary" className="w-100">
-                      Ver más
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </div>
-
-              <div className="col-12 col-lg-3 col-md-3 mt-3">
-                <Card className="product-card h-100 rounded">
-                  <Card.Img
-                    variant="top"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7jnqJu83c4356cObgqUqv9CDvQBzfyvmbNQ&s"
-                    alt="Gran Turismo 7"
-                    className=" rounded-top"
-                  />
-                  <Card.Body>
-                    <ul className="list-unstyled">
-                      <li className="fs-5">
-                        <b>Gran Turismo 7</b>
-                      </li>
-                      <li className="text-success">
-                        <b>Precio: 12500</b>
-                      </li>
-                    </ul>
-                    <Button variant="primary" className="w-100">
-                      Ver más
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </div>
-
-              <div className="col-12 col-lg-3 col-md-3 mt-3">
-                <Card className="product-card h-100 rounded">
-                  <Card.Img
-                    variant="top"
-                    src="https://spacegamer.com.ar/img/Public/1058-producto-gtavpremiun-270.jpg"
-                    alt="GTA 5"
-                    className=" rounded-top"
-                  />
-                  <Card.Body>
-                    <ul className="list-unstyled">
-                      <li className="fs-5">
-                        <b>GTA 5</b>
-                      </li>
-                      <li className="text-success">
-                        <b>Precio: 1500</b>
-                      </li>
-                    </ul>
-                    <Button variant="primary" className="w-100">
-                      Ver más
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </div>
-
-              <div className="col-12 col-lg-3 col-md-3 mt-3">
-                <Card className="product-card h-100 rounded">
-                  <Card.Img
-                    variant="top"
-                    src="https://i5.walmartimages.com/seo/The-Legend-of-Zelda-Breath-of-the-Wild-Nintendo-Switch_88fdeff7-b5c7-4dc1-9d30-66217f20f86c.3d08635afa4636f1074ae99ebf602b92.jpeg"
-                    alt="Zelda"
-                    className=" rounded-top"
-                  />
-                  <Card.Body>
-                    <ul className="list-unstyled">
-                      <li className="fs-5">
-                        <b>Zelda</b>
-                      </li>
-                      <li className="text-success">
-                        <b>Precio: 16400</b>
-                      </li>
-                    </ul>
-                    <Button variant="primary" className="w-100">
-                      Ver más
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </div>
-
-              <div className="col-12 col-lg-3 col-md-3 mt-3">
-                <Card className="product-card h-100 rounded">
-                  <Card.Img
-                    variant="top"
-                    src="https://juegosdigitalesargentina.com/files/images/productos/1539888144-days-gone-pre-orden-ps4-primaria.png"
-                    alt="Days gonr"
-                    className=" rounded-top"
-                  />
-                  <Card.Body>
-                    <ul className="list-unstyled">
-                      <li className="fs-5">
-                        <b>Days Gone</b>
-                      </li>
-                      <li className="text-success">
-                        <b>Precio: 54000</b>
-                      </li>
-                    </ul>
-                    <Button variant="primary" className="w-100">
-                      Ver más
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </div>
-
-              <div className="col-12 col-lg-3 col-md-3 mt-3">
-                <Card className="product-card h-100 rounded">
-                  <Card.Img
-                    variant="top"
-                    src="https://ubistatic-a.akamaihd.net/0071/Far_Cry_4/000078602_enGB_FC4_StandardEdition.jpg"
-                    alt="Far Cry"
-                    className=" rounded-top"
-                  />
-                  <Card.Body>
-                    <ul className="list-unstyled">
-                      <li className="fs-5">
-                        <b>Far Cry</b>
-                      </li>
-                      <li className="text-success">
-                        <b>Precio: 57000</b>
-                      </li>
-                    </ul>
-                    <Button variant="primary" className="w-100">
-                      Ver más
-                    </Button>
-                  </Card.Body>
-                </Card>
-              </div>
+              {juegosFiltradosPS4.length >= 5 ? (
+                
+                juegosFiltradosPS4.map((juego) => (
+                  <div className="col-12 col-lg-3 col-md-3 mt-3" key={juego.id}>
+                    <Card className="product-card h-100 rounded">
+                      <Card.Img
+                        variant="top"
+                        src={juego.imagen}
+                        alt={juego.Juego}
+                        className="rounded-top"
+                      />
+                      <Card.Body>
+                        <ul className="list-unstyled">
+                          <li className="fs-5">
+                            <b>{juego.Juego}</b>
+                          </li>
+                          <li className="text-success">
+                            <b>Precio: {juego.precio}</b>
+                          </li>
+                        </ul>
+                        <Button variant="primary" className="w-100">
+                          Ver más
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                ))
+              ) : (
+                <p>Ocurrio un error intentalo mas tarde</p>
+              )}
             </div>
 
             <Button

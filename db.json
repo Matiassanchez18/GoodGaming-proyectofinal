@@ -1,82 +1,123 @@
 {
   "productos": [
     {
+      "uego": "god",
+      "precio": "40.000",
+      "imagen": "https://images.pexels.com/photos/17612776/pexels-photo-17612776/free-photo-of-comida-resfriado-frio-sano.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "Categoria": "RPG",
+      "breve": "adgawdgusghdjahuwdh",
+      "amplio": "ajwudguawhdusgdugwudghawfwadwda",
+      "Desarrollador": "Logan Paul",
+      "id": 0
+    },
+    {
       "Juego": "ARK envolved",
-      "precio": "36.000",
-      "imagen": "https://http2.mlstatic.com/D_997869-MLU72644401271_112023-C.jpg",
+      "precio": "2342",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpma4nbmAVA11metwvgkjPZNhhAHI0OS7w_Q&s",
       "Genero": [
-        "Acción",
-        "Aventura",
-        "Survival",
-        "Multijugador"
+        "Acción"
       ],
-      "breve": "sdaawdawdawdawdawdawd",
-      "amplio": "awdawdawdawdawdawdawdawdawd",
-      "Desarrollador": "awdawdawdawdawdawdaw",
-      "JuegoDeSemana": "true",
+      "breve": "dawdawdawdawddw",
+      "amplio": "awdawdwaawdawdaw",
+      "Desarrollador": "awdawdawdawdaww",
       "id": 1
     },
     {
-      "Juego": "Batman",
-      "precio": "25.000",
-      "imagen": "https://juegosdigitalesargentina.com/files/images/productos/1495822305-arkahamn.png",
+      "Juego": "ARK envolved",
+      "precio": "1242",
+      "imagen": "http://localhost:5173/administrador/FormularioProducto",
       "Genero": [
-        "Acción",
-        "Aventura",
-        "RPG",
-        "Simulación",
-        "Lucha"
+        "Simulación"
       ],
-      "breve": "wadwdawdaw",
-      "amplio": "awdawdawdawdwadawdaw",
-      "Desarrollador": "adawdawdawdawdawd",
+      "breve": "dadawd",
+      "amplio": "awdawdawdawawdawdawd",
+      "Desarrollador": "awdawdawdawdawd",
+      "opcion": "",
       "JuegoDeSemana": "true",
       "id": 2
     },
     {
-      "Juego": "Los increibles",
-      "precio": "15.000",
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs0OOLdu2IfO6ObU7VNK6HIZQ5M3fE8S9aGg&s",
+      "Juego": "Draft Racing",
+      "precio": "45.000",
+      "imagen": "https://acdn.mitiendanube.com/stores/001/067/161/products/cover-ps411-d4222bf5761c619e0216845170792071-1024-1024.jpg",
       "Genero": [
-        "RPG",
-        "Lucha"
+        "Deportes",
+        "RPG"
       ],
-      "breve": "dadwdasdwd",
-      "amplio": "awdawdsdawdsdawdsdawdsdawd",
-      "Desarrollador": "sawdawd",
+      "breve": "waddawdawdasdawdsdawd",
+      "amplio": "sdawdsdawsdawsdawdsawd",
+      "Desarrollador": "adawdasdawd",
       "JuegoDeSemana": "true",
+      "Consola": "ps4",
       "id": 3
     },
     {
-      "Juego": "lego jurasic world",
-      "precio": "10.000",
-      "imagen": "https://juegosdigitalesargentina.com/files/images/productos/1576688461-lego-jurassic-world-ps4.jpg",
+      "Juego": "CTR ",
+      "precio": "5.000",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDgtHw1KIqwlK-TuEz--lWYuTCL9lIyCPUsA&s",
       "Genero": [
-        "Aventura",
+        "Deportes",
         "RPG",
         "Estrategia",
         "Simulación"
       ],
-      "breve": "ewaxawdwad",
-      "amplio": "awdsadawdsawdsdawd",
-      "Desarrollador": "awsdawdsdawdasd",
+      "breve": "wdadawdawdwa",
+      "amplio": "dawdawdswdawadsdwadwaawdawd",
+      "Desarrollador": "awdawdwddsdawsdwdasd",
       "JuegoDeSemana": "true",
+      "Consola": "ps4",
       "id": 4
     },
     {
-      "Juego": "Draft Racing",
-      "precio": "35.000",
-      "imagen": "https://acdn.mitiendanube.com/stores/001/067/161/products/cover-ps411-d4222bf5761c619e0216845170792071-1024-1024.jpg",
+      "Juego": "GOD",
+      "precio": "45.000",
+      "imagen": "https://http2.mlstatic.com/D_NQ_NP_890564-MLA54008978956_022023-O.webp",
       "Genero": [
-        "Deportes",
-        "RPG",
-        "Estrategia"
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Simulación"
       ],
-      "breve": "waddawdawdawd",
-      "amplio": "awdawdawdawdawdawdawdawd",
-      "Desarrollador": "awdawdawdawdaw",
+      "breve": "awdawdawdwadaw",
+      "amplio": "dawdawdawdawdawdawdwadwad",
+      "Desarrollador": "dwwadawdawd",
       "JuegoDeSemana": "true",
+      "Consola": "ps4",
       "id": 5
+    },
+    {
+      "Juego": "Uncharted",
+      "precio": "28.000",
+      "imagen": "https://s3.us-east-2.amazonaws.com/ccp-prd-s3-uploads/2018/11/22/e17684391b88d44fc0e76d9b68edc36f38b2ee05.jpeg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Lucha"
+      ],
+      "breve": "2ewq2ewdawdwadawd",
+      "amplio": "awdawdwadwadwadawdawdwadawdawdwad",
+      "Desarrollador": "awwdawd",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+      "id": 6
+    },
+    {
+      "Juego": "The last of us",
+      "precio": "67.000",
+      "imagen": "https://ps4digitalchile.com/files/images/productos/1594745236-the-last-of-us-part-ii-ps4.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Terror",
+        "Lucha",
+        "Survival"
+      ],
+      "breve": "awdwadawdawd",
+      "amplio": "awdawdawdawdawdawdwadwd",
+      "Desarrollador": "awdawd",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+      "id": 7
     }
   ]
 }
