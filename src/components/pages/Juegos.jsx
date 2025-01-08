@@ -9,11 +9,11 @@ import { listarProductosAPI } from "../helpers/queries";
 
 const Juegos = () => {
   const [Juegos, setJuegos] = useState([]);
-  const [JuegosFlitradosBusqueda, setJuegosFlitradosBusqueda] = useState([]); 
+  const [JuegosFlitradosBusqueda, setJuegosFlitradosBusqueda] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    consultarAPI(); 
+    consultarAPI();
   }, []);
 
   const consultarAPI = async () => {
@@ -21,7 +21,7 @@ const Juegos = () => {
     const respuesta = await listarProductosAPI();
     if (respuesta.status === 200) {
       const datos = await respuesta.json();
-      setJuegos(datos); 
+      setJuegos(datos);
       setJuegosFlitradosBusqueda(datos);
     } else {
       alert("Ocurrió un error, intenta más tarde");
@@ -54,7 +54,7 @@ const Juegos = () => {
                   type="text"
                   placeholder="Buscar por nombre"
                   className="mr-sm-2"
-                  onChange={busquedaDinamica} 
+                  onChange={busquedaDinamica}
                 />
               </Col>
             </Row>
