@@ -102,31 +102,36 @@ const Inicio = () => {
               ref={carouselRef}
               className="d-flex overflow-auto mt-4 card-container"
             >
-              {juegosFiltrados.map((juego) => (
-                <div className="col-12 col-lg-3 col-md-3 mt-3" key={juego.id}>
-                  <Card className="product-card h-100 rounded">
-                    <Card.Img
-                      variant="top"
-                      src={juego.imagen}
-                      alt={juego.Juego}
-                      className="rounded-top"
-                    />
-                    <Card.Body>
-                      <ul className="list-unstyled">
-                        <li className="fs-5">
-                          <b>{juego.Juego}</b>
-                        </li>
-                        <li className="text-success">
-                          <b>Precio: {juego.precio}</b>
-                        </li>
-                      </ul>
-                      <Button variant="primary" className="w-100">
-                        Ver más
-                      </Button>
-                    </Card.Body>
-                  </Card>
-                </div>
-              ))}
+              {juegosFiltrados.length >= 5 ? (
+                
+                juegosFiltrados.map((juego) => (
+                  <div className="col-12 col-lg-3 col-md-3 mt-3" key={juego.id}>
+                    <Card className="product-card h-100 rounded">
+                      <Card.Img
+                        variant="top"
+                        src={juego.imagen}
+                        alt={juego.Juego}
+                        className="rounded-top"
+                      />
+                      <Card.Body>
+                        <ul className="list-unstyled">
+                          <li className="fs-5">
+                            <b>{juego.Juego}</b>
+                          </li>
+                          <li className="text-success">
+                            <b>Precio: {juego.precio}</b>
+                          </li>
+                        </ul>
+                        <Button variant="primary" className="w-100">
+                          Ver más
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                ))
+              ) : (
+                <p>Ocurrio un error intentalo mas tarde</p>
+              )}
             </div>
 
             <Button
