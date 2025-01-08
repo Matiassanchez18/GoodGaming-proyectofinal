@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
 import { crearProductoAPI } from "../helpers/queries";
+import Swal from 'sweetalert2'
 
 const FormularioJuego = () => {
   const {
@@ -18,12 +19,19 @@ const FormularioJuego = () => {
    console.log(Juego)
    const respuesta = await crearProductoAPI(Juego)
    if (respuesta.status === 201) {
-    alert("El producto fue creado correctamente");
+    Swal.fire({
+      title: "Se creo el juego con exito!",
+      icon: "success",
+      draggable: false
+    });
     reset();
   } else {
-    alert(
-      "Ocurrio un error, volve a intentar esta operacion en unos minutos"
-    );
+    Swal.fire({
+      title: 'Ocurrio un erro por favor intentelo mas tarde!',
+      text: 'Quieres continuar',
+      icon: 'error',
+      confirmButtonText: 'ok'
+    })
   }
   };
 
