@@ -2,7 +2,12 @@ import React, { useRef } from "react";
 import { Carousel, Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../pages/css/Style.css";
-import { Fire } from "react-bootstrap-icons";
+import {
+  Fire,
+  ChevronDoubleRight,
+  ChevronDoubleLeft,
+} from "react-bootstrap-icons";
+import { Link } from "react-router";
 
 const Inicio = () => {
   const carouselRef = useRef(null);
@@ -91,7 +96,6 @@ const Inicio = () => {
                 </Card>
               </div>
 
-              
               <div className="col-12 col-lg-3 col-md-3 mt-3">
                 <Card className="product-card h-100 rounded">
                   <Card.Img
@@ -116,7 +120,6 @@ const Inicio = () => {
                 </Card>
               </div>
 
-              
               <div className="col-12 col-lg-3 col-md-3 mt-3">
                 <Card className="product-card h-100 rounded">
                   <Card.Img
@@ -141,7 +144,6 @@ const Inicio = () => {
                 </Card>
               </div>
 
-          
               <div className="col-12 col-lg-3 col-md-3 mt-3">
                 <Card className="product-card h-100 rounded">
                   <Card.Img
@@ -222,6 +224,184 @@ const Inicio = () => {
               aria-label="Scroll right"
             >
               &#8594;
+            </Button>
+          </div>
+        </article>
+
+        <article className="container mt-5 ">
+          <div className="d-flex justify-content-between border-bottom align-items-center">
+            <h2 className="mb-0">Juegos PS4</h2>
+            <Link to="#" className="text-decoration-none ">
+              <h4 className="mb-0">Ver más</h4>
+            </Link>
+          </div>
+
+          <div className="d-flex align-items-center">
+            <Button
+              variant="link"
+              onClick={scrollLeft}
+              className="fs-3 text-dark arrow-btn"
+              aria-label="Scroll left"
+            >
+              <ChevronDoubleLeft></ChevronDoubleLeft>
+            </Button>
+
+            <div
+              ref={carouselRef}
+              className="d-flex overflow-auto mt-4 card-container"
+            >
+              <div className="col-12 col-lg-3 col-md-3 mt-3">
+                <Card className="product-card h-100 rounded">
+                  <Card.Img
+                    variant="top"
+                    src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
+                    alt="God of War"
+                    className=" rounded-top"
+                  />
+                  <Card.Body>
+                    <ul className="list-unstyled">
+                      <li className="fs-5">
+                        <b>God of War</b>
+                      </li>
+                      <li className="text-success">
+                        <b>Precio: 2500</b>
+                      </li>
+                    </ul>
+                    <Button variant="primary" className="w-100">
+                      Ver más
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </div>
+
+              <div className="col-12 col-lg-3 col-md-3 mt-3">
+                <Card className="product-card h-100 rounded">
+                  <Card.Img
+                    variant="top"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7jnqJu83c4356cObgqUqv9CDvQBzfyvmbNQ&s"
+                    alt="Gran Turismo 7"
+                    className=" rounded-top"
+                  />
+                  <Card.Body>
+                    <ul className="list-unstyled">
+                      <li className="fs-5">
+                        <b>Gran Turismo 7</b>
+                      </li>
+                      <li className="text-success">
+                        <b>Precio: 12500</b>
+                      </li>
+                    </ul>
+                    <Button variant="primary" className="w-100">
+                      Ver más
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </div>
+
+              <div className="col-12 col-lg-3 col-md-3 mt-3">
+                <Card className="product-card h-100 rounded">
+                  <Card.Img
+                    variant="top"
+                    src="https://spacegamer.com.ar/img/Public/1058-producto-gtavpremiun-270.jpg"
+                    alt="GTA 5"
+                    className=" rounded-top"
+                  />
+                  <Card.Body>
+                    <ul className="list-unstyled">
+                      <li className="fs-5">
+                        <b>GTA 5</b>
+                      </li>
+                      <li className="text-success">
+                        <b>Precio: 1500</b>
+                      </li>
+                    </ul>
+                    <Button variant="primary" className="w-100">
+                      Ver más
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </div>
+
+              <div className="col-12 col-lg-3 col-md-3 mt-3">
+                <Card className="product-card h-100 rounded">
+                  <Card.Img
+                    variant="top"
+                    src="https://i5.walmartimages.com/seo/The-Legend-of-Zelda-Breath-of-the-Wild-Nintendo-Switch_88fdeff7-b5c7-4dc1-9d30-66217f20f86c.3d08635afa4636f1074ae99ebf602b92.jpeg"
+                    alt="Zelda"
+                    className=" rounded-top"
+                  />
+                  <Card.Body>
+                    <ul className="list-unstyled">
+                      <li className="fs-5">
+                        <b>Zelda</b>
+                      </li>
+                      <li className="text-success">
+                        <b>Precio: 16400</b>
+                      </li>
+                    </ul>
+                    <Button variant="primary" className="w-100">
+                      Ver más
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </div>
+
+              <div className="col-12 col-lg-3 col-md-3 mt-3">
+                <Card className="product-card h-100 rounded">
+                  <Card.Img
+                    variant="top"
+                    src="https://juegosdigitalesargentina.com/files/images/productos/1539888144-days-gone-pre-orden-ps4-primaria.png"
+                    alt="Days gonr"
+                    className=" rounded-top"
+                  />
+                  <Card.Body>
+                    <ul className="list-unstyled">
+                      <li className="fs-5">
+                        <b>Days Gone</b>
+                      </li>
+                      <li className="text-success">
+                        <b>Precio: 54000</b>
+                      </li>
+                    </ul>
+                    <Button variant="primary" className="w-100">
+                      Ver más
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </div>
+
+              <div className="col-12 col-lg-3 col-md-3 mt-3">
+                <Card className="product-card h-100 rounded">
+                  <Card.Img
+                    variant="top"
+                    src="https://ubistatic-a.akamaihd.net/0071/Far_Cry_4/000078602_enGB_FC4_StandardEdition.jpg"
+                    alt="Far Cry"
+                    className=" rounded-top"
+                  />
+                  <Card.Body>
+                    <ul className="list-unstyled">
+                      <li className="fs-5">
+                        <b>Far Cry</b>
+                      </li>
+                      <li className="text-success">
+                        <b>Precio: 57000</b>
+                      </li>
+                    </ul>
+                    <Button variant="primary" className="w-100">
+                      Ver más
+                    </Button>
+                  </Card.Body>
+                </Card>
+              </div>
+            </div>
+
+            <Button
+              variant="link"
+              onClick={scrollRight}
+              className="fs-3 text-dark arrow-btn"
+              aria-label="Scroll right"
+            >
+              <ChevronDoubleRight></ChevronDoubleRight>
             </Button>
           </div>
         </article>
