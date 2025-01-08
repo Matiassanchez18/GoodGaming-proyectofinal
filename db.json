@@ -1,19 +1,14 @@
 {
-  "posts": [
+  "productos": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "uego": "god",
+      "precio": "40.000",
+      "imagen": "https://images.pexels.com/photos/17612776/pexels-photo-17612776/free-photo-of-comida-resfriado-frio-sano.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "Categoria": "RPG",
+      "breve": "adgawdgusghdjahuwdh",
+      "amplio": "ajwudguawhdusgdugwudghawfwadwda",
+      "Desarrollador": "Logan Paul",
+      "id": ""
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
