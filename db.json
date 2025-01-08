@@ -1,18 +1,5 @@
 {
   "productos": [
-
-    {
-      "Juego": "ARK envolved",
-      "precio": "20.000",
-      "imagen": "https://juegosdigitalesargentina.com/files/images/productos/1576686032-ark-survival-evolved-ps4.jpg",
-      "Genero": [
-        "Acción"
-      ],
-      "breve": "dawdawdawdawddw",
-      "amplio": "awdawdwaawdawdaw",
-      "Desarrollador": "awdawdawdawdaww",
-      "id": 1
-    },
     {
       "Juego": "Recident evil",
       "precio": "60.000",

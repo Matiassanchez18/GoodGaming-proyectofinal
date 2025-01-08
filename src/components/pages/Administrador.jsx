@@ -1,55 +1,82 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { FileEarmarkPlus, PencilSquare, Trash3 } from "react-bootstrap-icons";
-import { Link } from 'react-router';
+import { Link } from "react-router";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-import "./css/Style.css"
-import { listarProductosAPI } from '../helpers/queries';
+import "./css/Style.css";
+import { eliminarProducto, listarProductosAPI } from "../helpers/queries";
+import Swal from 'sweetalert2'
 
 
 const Administrador = () => {
-
-  const [listaJuegos, setlistaJuegos] = useState([])
+  const [listaJuegos, setlistaJuegos] = useState([]);
 
   useEffect(() => {
     consultarAPI();
-  }, []); 
+  }, []);
 
-
-  const consultarAPI = async()=>{
+  const consultarAPI = async () => {
     const respuesta = await listarProductosAPI();
-    if(respuesta.status === 200){
+    if (respuesta.status === 200) {
       const datos = await respuesta.json();
-      setlistaJuegos(datos)
-    }else{
-    alert("Ocurrio un error por favor intente mas tarde!")
+      setlistaJuegos(datos);
+    } else {
+      alert("Ocurrio un error por favor intente mas tarde!");
     }
-  }
+  };
 
-
+  const borrarProducto = async (JuegoId) => {
+    const respuesta = await eliminarProducto(JuegoId);
+    if (respuesta.status === 200) {
+      Swal.fire({
+            title: "El articulo se elimino correctamente!",
+            icon: "success",
+            draggable: false
+          });
+      const respuestaJuego = await listarProductosAPI();
+      if (respuestaJuego.status === 200) {
+        const datos = await respuestaJuego.json();
+        setlistaJuegos(datos);
+      } else {
+         Swal.fire({
+              title: 'Ocurrio un erro por favor intentelo mas tarde!',
+              text: 'Quieres continuar',
+              icon: 'error',
+              confirmButtonText: 'ok'
+            })
+      }
+    } else {
+      Swal.fire({
+        title: 'Ocurrio un erro por favor intentelo mas tarde!',
+        text: 'Quieres continuar',
+        icon: 'error',
+        confirmButtonText: 'ok'
+      })
+    }
+  };
 
   return (
     <section className="table-responsive container mt-5">
-    <div className="d-flex justify-content-between align-items-center border-bottom mb-4">
-      <h1 className="">Producto disponibles</h1>
-      <Link  to={"/Administrador/FormularioJuego"}>
-        <FileEarmarkPlus className="fs-4" />
-      </Link>
-    </div>
+      <div className="d-flex justify-content-between align-items-center border-bottom mb-4">
+        <h1 className="">Producto disponibles</h1>
+        <Link to={"/Administrador/FormularioJuego"}>
+          <FileEarmarkPlus className="fs-4" />
+        </Link>
+      </div>
 
-    <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>Producto</th>
-          <th>Precio</th>
-          <th>URL imagen</th>
-          <th>Categoria</th>
-          <th>Opciones</th>
-        </tr>
-      </thead>
-      <tbody>
-      {listaJuegos.map((Juego) => (
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>URL imagen</th>
+            <th>Categoria</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listaJuegos.map((Juego) => (
             <tr key={Juego.id}>
               <td>{Juego.id}</td>
               <td>{Juego.Juego}</td>
@@ -70,19 +97,16 @@ const Administrador = () => {
                   <PencilSquare />
                 </Link>
 
-                <Button
-                  variant="danger"
-                >
+                <Button variant="danger" onClick={()=> borrarProducto(Juego.id)}>
                   <Trash3></Trash3>
                 </Button>
               </td>
             </tr>
           ))}
-        
-      </tbody>
-    </Table>
-  </section>
-);
+        </tbody>
+      </Table>
+    </section>
+  );
 };
 
 export default Administrador;
