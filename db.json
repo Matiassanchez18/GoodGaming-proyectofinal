@@ -9,6 +9,22 @@
       "amplio": "ajwudguawhdusgdugwudghawfwadwda",
       "Desarrollador": "Logan Paul",
       "id": ""
+    },
+    {
+      "Juego": "ARK envolved",
+      "precio": "36.000",
+      "imagen": "https://m.media-amazon.com/images/I/7193I1xOAaL._SL1500_.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "RPG",
+        "Survival",
+        "Multijugador"
+      ],
+      "breve": "un juego de survivencia",
+      "amplio": "un juego de survivencia",
+      "Desarrollador": "ARK",
+      "id": "-HtnO12"
     }
   ]
 }

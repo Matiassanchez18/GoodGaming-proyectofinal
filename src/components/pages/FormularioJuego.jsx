@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
+import { crearProductoAPI } from "../helpers/queries";
 
 const FormularioJuego = () => {
   const {
@@ -13,8 +14,17 @@ const FormularioJuego = () => {
     setValue,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Datos enviados:", data); 
+  const onSubmit = async(Juego) => {
+   console.log(Juego)
+   const respuesta = await crearProductoAPI(Juego)
+   if (respuesta.status === 201) {
+    alert("El producto fue creado correctamente");
+    reset();
+  } else {
+    alert(
+      "Ocurrio un error, volve a intentar esta operacion en unos minutos"
+    );
+  }
   };
 
   return (
