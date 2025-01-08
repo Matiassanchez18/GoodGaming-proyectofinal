@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FileEarmarkPlus, PencilSquare, Trash3 } from "react-bootstrap-icons";
 import { Link } from 'react-router';
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import "./css/Style.css"
+import { listarProductosAPI } from '../helpers/queries';
 
 
 const Administrador = () => {
+
+  const [listaJuegos, setlistaJuegos] = useState([])
+
+  useEffect(() => {
+    consultarAPI();
+  }, []); 
+
+
+  const consultarAPI = async()=>{
+    const respuesta = await listarProductosAPI();
+    if(respuesta.status === 200){
+      const datos = await respuesta.json();
+      setlistaJuegos(datos)
+    }else{
+    alert("Ocurrio un error por favor intente mas tarde!")
+    }
+  }
+
+
+
   return (
     <section className="table-responsive container mt-5">
     <div className="d-flex justify-content-between align-items-center border-bottom mb-4">
@@ -28,33 +49,36 @@ const Administrador = () => {
         </tr>
       </thead>
       <tbody>
-          <tr >
-            <td>12</td>
-            <td>GOD</td>
-            <td>1500</td>
-            <td className="text-center">
-              <img
-                src="https://gorilagames.com/img/Public/1019-producto-god-of-war-9234.jpg"
-                alt="Imagen de Jugo"
-                className="ImgAministrador mx-auto d-block"
-              />
-            </td>
-            <td>survivar</td>
-            <td>
-              <Link
-                className="btn btn-warning me-4 ms-4"
-              >
-                <PencilSquare />
-              </Link>
+      {listaJuegos.map((Juego) => (
+            <tr key={Juego.id}>
+              <td>{Juego.id}</td>
+              <td>{Juego.Juego}</td>
+              <td>{Juego.precio}</td>
+              <td className="text-center">
+                <img
+                  src={Juego.imagen}
+                  alt="Imagen de Jugo"
+                  className="ImgAministrador mx-auto d-block"
+                />
+              </td>
+              <td>{Juego.opcion}</td>
+              <td>
+                <Link
+                  to={`/administrador/FormularioJuego/editar/${Juego.id}`}
+                  className="btn btn-warning me-4 ms-4"
+                >
+                  <PencilSquare />
+                </Link>
 
-              <Button
-                variant="danger"
-                
-              >
-                <Trash3></Trash3>
-              </Button>
-            </td>
-          </tr>
+                <Button
+                  variant="danger"
+                >
+                  <Trash3></Trash3>
+                </Button>
+              </td>
+            </tr>
+          ))}
+        
       </tbody>
     </Table>
   </section>
