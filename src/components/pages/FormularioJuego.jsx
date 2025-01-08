@@ -20,7 +20,7 @@ const FormularioJuego = () => {
   return (
     <section className="container">
       <p className="fs-1 mt-5 border-bottom">Administrar Juegos</p>
-      <form className="container" onSubmit={handleSubmit(onSubmit)}>
+      <form className="container border shadow p-4 rounded" onSubmit={handleSubmit(onSubmit)}>
         
         <Form.Group className="mb-3" controlId="Juego">
           <Form.Label>Juego*</Form.Label>
@@ -175,6 +175,28 @@ const FormularioJuego = () => {
             {errors.amplio?.message}
           </Form.Text>
         </FloatingLabel>
+
+        <Form.Group className="mb-3 mt-4" controlId="Desarrollador">
+          <Form.Label>Desarrollador*</Form.Label>
+          <Form.Control
+            {...register("Desarrollador", {
+              required: "Este campo es obligatorio",
+              minLength: {
+                value: 3,
+                message: "El mínimo de caracteres es de 3",
+              },
+              maxLength: {
+                value: 25,
+                message: "El máximo de caracteres permitido es de 25",
+              },
+            })}
+            type="text"
+            placeholder="Ingresa el nombre del Desarrollador"
+          />
+          <Form.Text className="text-danger mt-2">
+            {errors.Desarrollador?.message}
+          </Form.Text>
+        </Form.Group>
 
         
         <Button variant="success" type="submit" className="mt-5">
