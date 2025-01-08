@@ -11,14 +11,23 @@ import { Link } from "react-router";
 
 const Inicio = () => {
   const carouselRef = useRef(null);
+  const carouselRef2 = useRef(null);
 
   // Funciones para mover el carrusel
   const scrollLeft = () => {
-    carouselRef.current.scrollBy({ left: -300, behavior: "smooth" }); // Desplazar hacia la izquierda
+    carouselRef.current.scrollBy({ left: -300, behavior: "smooth" }); 
   };
 
   const scrollRight = () => {
-    carouselRef.current.scrollBy({ left: 300, behavior: "smooth" }); // Desplazar hacia la derecha
+    carouselRef.current.scrollBy({ left: 300, behavior: "smooth" }); 
+  };
+
+  const scrollLeft2 = () => {
+    carouselRef2.current.scrollBy({ left: -300, behavior: "smooth" }); 
+  };
+
+  const scrollRight2 = () => {
+    carouselRef2.current.scrollBy({ left: 300, behavior: "smooth" }); 
   };
 
   return (
@@ -239,15 +248,15 @@ const Inicio = () => {
           <div className="d-flex align-items-center">
             <Button
               variant="link"
-              onClick={scrollLeft}
+              onClick={scrollLeft2}
               className="fs-3 text-dark arrow-btn"
               aria-label="Scroll left"
             >
-              <ChevronDoubleLeft></ChevronDoubleLeft>
+             <ChevronDoubleLeft></ChevronDoubleLeft>
             </Button>
 
             <div
-              ref={carouselRef}
+              ref={carouselRef2}
               className="d-flex overflow-auto mt-4 card-container"
             >
               <div className="col-12 col-lg-3 col-md-3 mt-3">
@@ -397,7 +406,7 @@ const Inicio = () => {
 
             <Button
               variant="link"
-              onClick={scrollRight}
+              onClick={scrollRight2}
               className="fs-3 text-dark arrow-btn"
               aria-label="Scroll right"
             >

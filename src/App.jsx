@@ -6,6 +6,7 @@ import Menu from "./components/pages/common/Menu";
 import Footer from "./components/pages/common/Footer";
 import Inicio from "./components/pages/Inicio";
 import Juegos from "./components/pages/Juegos";
+import Administrador from "./components/pages/Administrador";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio></Inicio>}/>
           <Route path="/Juegos" element={<Juegos></Juegos>}/>
+          <Route path="/Administrador" element={<Administrador></Administrador>}/>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
