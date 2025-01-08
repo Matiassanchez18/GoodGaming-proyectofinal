@@ -1,11 +1,6 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Button from "react-bootstrap/Button";
-import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router";
 
-const Administrador = () => {
+const Formulario = () => {
   const {
     register,
     handleSubmit,
@@ -15,14 +10,14 @@ const Administrador = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Datos enviados:", data); // Mostrar los datos en consola
+    console.log("Datos enviados:", data); 
   };
 
   return (
     <section className="container">
       <p className="fs-1 mt-5 border-bottom">Administrar Juegos</p>
       <form className="container" onSubmit={handleSubmit(onSubmit)}>
-        {/* Campo Juego */}
+        
         <Form.Group className="mb-3" controlId="Juego">
           <Form.Label>Juego*</Form.Label>
           <Form.Control
@@ -45,7 +40,7 @@ const Administrador = () => {
           </Form.Text>
         </Form.Group>
 
-        {/* Campo Precio */}
+        
         <Form.Group className="mb-3" controlId="Precio">
           <Form.Label>Precio*</Form.Label>
           <Form.Control
@@ -68,7 +63,7 @@ const Administrador = () => {
           </Form.Text>
         </Form.Group>
 
-        {/* Campo Imagen URL */}
+       
         <Form.Group className="mb-3" controlId="Imagen">
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
@@ -83,7 +78,7 @@ const Administrador = () => {
           </Form.Text>
         </Form.Group>
 
-        {/* Campo de Géneros con Checkboxes */}
+       
         <Form.Group className="mb-3">
           <Form.Label>Categoría del producto*</Form.Label>
           <div>
@@ -114,7 +109,8 @@ const Administrador = () => {
                 label={genre}
                 value={genre}
                 {...register("Genero", {
-                  validate: (value) => value.length > 0 || "Debe seleccionar al menos un género",
+                  validate: (value) =>
+                    value.length > 0 || "Debe seleccionar al menos un género",
                 })}
               />
             ))}
@@ -124,8 +120,12 @@ const Administrador = () => {
           </Form.Text>
         </Form.Group>
 
-        {/* Campo Breve descripción */}
-        <FloatingLabel controlId="Breve" label="Descripción breve" className="mt-4">
+       
+        <FloatingLabel
+          controlId="Breve"
+          label="Descripción breve"
+          className="mt-4"
+        >
           <Form.Control
             as="textarea"
             placeholder="Deja un comentario aquí"
@@ -146,8 +146,12 @@ const Administrador = () => {
           </Form.Text>
         </FloatingLabel>
 
-        {/* Campo Descripción amplia */}
-        <FloatingLabel controlId="Amplia" label="Descripción amplia" className="mt-4">
+        
+        <FloatingLabel
+          controlId="Amplia"
+          label="Descripción amplia"
+          className="mt-4"
+        >
           <Form.Control
             as="textarea"
             placeholder="Deja un comentario aquí"
@@ -168,7 +172,7 @@ const Administrador = () => {
           </Form.Text>
         </FloatingLabel>
 
-        {/* Botón de guardar */}
+        
         <Button variant="success" type="submit" className="mt-5">
           Guardar
         </Button>
@@ -177,4 +181,4 @@ const Administrador = () => {
   );
 };
 
-export default Administrador;
+export default Formulario;
