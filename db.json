@@ -23,6 +23,34 @@
       "Desarrollador": "adwdawd",
       "JuegoDeSemana": "true",
       "id": 1
+    },
+    {
+      "Juego": "ARK envolved",
+      "precio": "1245",
+      "imagen": "http://localhost:5173/administrador/FormularioProducto",
+      "Genero": [
+        "Simulación",
+        "Terror"
+      ],
+      "breve": "awdawdawdawdawdawdawdawdawdawdaw",
+      "amplio": "dadwadawawdawdawdawdawdawdawdawdawdawd",
+      "Desarrollador": "adwdawd",
+      "JuegoDeSemana": "true",
+      "id": 2
+    },
+    {
+      "Juego": "ARK envolved",
+      "precio": "1245",
+      "imagen": "http://localhost:5173/administrador/FormularioProducto",
+      "Genero": [
+        "Simulación",
+        "Terror"
+      ],
+      "breve": "awdawdawdawdawdawdawdawdawdawdaw",
+      "amplio": "dadwadawawdawdawdawdawdawdawdawdawdawd",
+      "Desarrollador": "adwdawd",
+      "JuegoDeSemana": "true",
+      "id": 3
     }
   ]
 }
