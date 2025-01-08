@@ -216,6 +216,22 @@ const FormularioJuego = () => {
           </Form.Text>
         </Form.Group>
 
+        <Form.Group>
+          <Form.Label>Categoria del producto*</Form.Label>
+          <Form.Select
+            {...register("JuegoDeSemana", {
+              required: "Este campo es obligatorio",
+            })}
+          >
+            <option value="">Juego de la semana?</option>
+            <option value="true">si</option>
+            <option value="false">no</option>
+          </Form.Select>
+          <Form.Text className="text-danger mt-2">
+            {errors.JuegoDeSemana?.message}
+          </Form.Text>
+        </Form.Group>
+
         
         <Button variant="success" type="submit" className="mt-5">
           Guardar
