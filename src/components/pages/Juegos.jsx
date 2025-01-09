@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
 import { listarProductosAPI } from "../helpers/queries";
+import { Link } from "react-router";
 
 const Juegos = () => {
   const [Juegos, setJuegos] = useState([]);
@@ -86,9 +87,9 @@ const Juegos = () => {
                           <b>{juego.precio}</b>
                         </li>
                       </ul>
-                      <Button variant="primary" className="w-100">
-                        Ver más
-                      </Button>
+                      <Link to={"/DetalleProductos/"+juego.id} className="btn btn-primary w-100" >
+                          Ver más
+                        </Link>
                     </Card.Body>
                   </Card>
                 </div>

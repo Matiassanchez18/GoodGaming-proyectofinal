@@ -5,9 +5,9 @@ import { obtenerJuegos } from "../helpers/queries";
 
 const DetalleProductos = () => {
   
-  const [Estrellas, setEstrellas] = useState(0); // Estado de la calificación
-  const [Comentario, setComentario] = useState(""); // Estado del comentario
-  const [ComentariosList, setComentariosList] = useState([ // Lista de comentarios inicial
+  const [Estrellas, setEstrellas] = useState(0); 
+  const [Comentario, setComentario] = useState(""); 
+  const [ComentariosList, setComentariosList] = useState([ 
     {
       user: "Juan Perez",
       text: "¡Me encantó el juego! La historia es increíble.",
@@ -38,12 +38,12 @@ const DetalleProductos = () => {
     }
   }
 
-  // Función para manejar cambios en el comentario
+  
   const handleComentarioChange = (event) => {
     setComentario(event.target.value);
   };
 
-  // Función para manejar el envío de comentario
+
   const handleComentarioSubmit = (event) => {
     event.preventDefault();
     if (Comentario.trim()) {
@@ -55,12 +55,12 @@ const DetalleProductos = () => {
           Estrellas: Estrellas, 
         },
       ]);
-      setComentario(""); // Limpiar el comentario
-      setEstrellas(0);   // Limpiar la calificación
+      setComentario(""); 
+      setEstrellas(0);   
     }
   };
 
-  // Función para manejar el cambio de estrellas
+ 
   const handleEstrellasChange = (newEstrellas) => {
     setEstrellas(newEstrellas);  
   };
@@ -104,7 +104,7 @@ const DetalleProductos = () => {
                     className={`Estrella ${Estrellas >= star ? "filled" : ""}`}
                     onClick={() => handleEstrellasChange(star)} 
                   >
-                    &#9733; {/* Estrella de la calificación */}
+                    &#9733;
                   </span>
                 ))}
               </div>
