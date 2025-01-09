@@ -126,9 +126,9 @@ const Inicio = () => {
                             <b>Precio: {juego.precio}</b>
                           </li>
                         </ul>
-                        <Button variant="primary" className="w-100">
+                        <Link to={"/DetalleProductos/"+juego.id} className="btn btn-primary w-100" >
                           Ver más
-                        </Button>
+                        </Link>
                       </Card.Body>
                     </Card>
                   </div>

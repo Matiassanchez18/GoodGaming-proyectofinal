@@ -144,7 +144,9 @@ body {
 }
 
 
-
+.rezine{
+  resize: none;
+}
 
 
 

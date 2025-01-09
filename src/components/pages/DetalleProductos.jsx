@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/Style.css";
+import { useParams } from "react-router";
+import { obtenerJuegos } from "../helpers/queries";
 
 const DetalleProductos = () => {
   
@@ -17,6 +19,24 @@ const DetalleProductos = () => {
       Estrellas: 4,
     },
   ]);
+
+  const [Juegos, setJuegos] = useState({})
+
+  const {id} = useParams();
+
+  useEffect(()=>{
+    obtenerJuego();
+   }, [])
+
+  const obtenerJuego = async()=>{
+    const respuesta = await obtenerJuegos(id)
+    if(respuesta.status === 200){
+        const datos = await respuesta.json()
+        setJuegos(datos)
+    }else{
+        alert('Ocurrio un error intente mas tarde')
+    }
+  }
 
   // Función para manejar cambios en el comentario
   const handleComentarioChange = (event) => {
@@ -53,7 +73,7 @@ const DetalleProductos = () => {
             <div className="row no-gutters">
               <div className="col-md-5">
                 <img
-                  src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/10/caratula-last-us-parte-ii.jpg?tf=3840x"
+                  src={Juegos.imagen}
                   alt="Imagen del producto"
                   className="ImagenDetalleProducto"
                 />
@@ -61,21 +81,20 @@ const DetalleProductos = () => {
 
               <div className="col-md-7">
                 <div className="card-body custom-card-body">
-                  <h4 className="card-title">The Last of Us Parte II</h4>
-                  <p className="card-text text-muted">Juego para PlayStation 4</p>
+                  <h4 className="card-title">{Juegos.Juego}</h4>
+                  <p className="card-text text-muted">Juego para {Juegos.Consola}</p>
                   <p className="card-description">
-                    La secuela del aclamado juego de aventuras y acción. Explora un mundo post-apocalíptico lleno de emoción, tensión y personajes memorables.
-                    Vive la historia de Ellie mientras lucha por sobrevivir en un entorno brutal y despiadado.
+                    {Juegos.amplio}
                   </p>
                   <div className="d-flex justify-content-between align-items-center">
-                    <span className="price">€59.99</span>
+                    <span className="price">${Juegos.precio}</span>
                     <button className="btn btn-outline-dark">Añadir al carrito</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Sección de calificación */}
+            
             <div className="card-footer">
               <h5 className="Calificacion-titulo">Calificación</h5>
               <div className="Calificacion">
@@ -91,13 +110,13 @@ const DetalleProductos = () => {
               </div>
             </div>
 
-            {/* Sección de comentarios */}
+            
             <div className="card-body">
               <h5>Comentarios</h5>
               <form onSubmit={handleComentarioSubmit}>
                 <div className="mb-3">
                   <textarea
-                    className="form-control"
+                    className="form-control rezine"
                     rows="3"
                     placeholder="Deja tu comentario"
                     value={Comentario}

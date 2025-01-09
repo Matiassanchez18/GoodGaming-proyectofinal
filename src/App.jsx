@@ -26,7 +26,7 @@ function App() {
           <Route path="/Administrador/FormularioJuego"crearProducto={true}  element={<FormularioJuego></FormularioJuego>}/>
           <Route path="/Administrador/FormularioJuego/editar/:id" element={<FormularioJuego crearProducto={false} />} />
           <Route path="/Login" element={<Login></Login>}/>
-          <Route path="/DetalleProductos" element={<DetalleProductos></DetalleProductos>}/>
+          <Route path="/DetalleProductos/:id" element={<DetalleProductos></DetalleProductos>}/>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
