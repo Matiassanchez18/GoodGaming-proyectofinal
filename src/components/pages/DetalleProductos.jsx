@@ -87,7 +87,7 @@ const DetalleProductos = () => {
                     {Juegos.amplio}
                   </p>
                   <div className="d-flex justify-content-between align-items-center">
-                    <span className="price">${Juegos.precio}</span>
+                    <span className="price text-success "><b>${Juegos.precio}</b></span>
                     <button className="btn btn-outline-dark">Añadir al carrito</button>
                   </div>
                 </div>
