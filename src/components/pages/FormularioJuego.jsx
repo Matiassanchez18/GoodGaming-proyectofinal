@@ -3,9 +3,13 @@ import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
-import { crearProductoAPI, editarProductoAPI, obtenerJuegos } from "../helpers/queries";
+import {
+  crearProductoAPI,
+  editarProductoAPI,
+  obtenerJuegos,
+} from "../helpers/queries";
 import Swal from "sweetalert2";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 const FormularioJuego = ({ crearProducto }) => {
   const {
@@ -21,6 +25,8 @@ const FormularioJuego = ({ crearProducto }) => {
       cargarProducto();
     }
   }, []);
+
+  const navegacion = useNavigate();
 
   const { id } = useParams();
 
@@ -64,11 +70,21 @@ const FormularioJuego = ({ crearProducto }) => {
       }
     } else {
       const respuesta = await editarProductoAPI(Juego, id);
-      if(respuesta.status === 200){
-        alert('el producto fue actualizado')
-      }else{
-        alert('ocurrio un error intenta mas tarde 2')
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "Se creo el juego con exito!",
+          icon: "success",
+          draggable: false,
+        });
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error por favor intentelo mas tarde!",
+          text: "Quieres continuar",
+          icon: "error",
+          confirmButtonText: "ok",
+        });
       }
+      navegacion("/administrador");
     }
   };
 
