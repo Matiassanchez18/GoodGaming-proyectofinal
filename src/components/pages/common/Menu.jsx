@@ -17,6 +17,7 @@ const Menu = () => {
             <Nav className="ms-auto">
               <NavLink  className="nav-link" to={"/"}>Inicio</NavLink>
               <NavLink  className="nav-link" to={"/Juegos"}>Juegos</NavLink>
+              <NavLink  className="nav-link" to={"/AcercadeNostros"}>Acerca de Nosotros</NavLink>
               <NavLink  className="nav-link" to={"/Administrador"}>Administrador</NavLink>
             </Nav>
           </Navbar.Collapse>

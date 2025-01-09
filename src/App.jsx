@@ -11,6 +11,7 @@ import FormularioJuego from "./components/pages/FormularioJuego";
 import Login from "./components/pages/Login";
 import { useForm } from "react-hook-form";
 import DetalleProductos from "./components/pages/DetalleProductos";
+import AcercadeNostros from "./components/pages/AcercadeNostros";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Administrador/FormularioJuego/editar/:id" element={<FormularioJuego crearProducto={false} />} />
           <Route path="/Login" element={<Login></Login>}/>
           <Route path="/DetalleProductos/:id" element={<DetalleProductos></DetalleProductos>}/>
+          <Route path="/AcercadeNostros" element={<AcercadeNostros></AcercadeNostros>}/>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
