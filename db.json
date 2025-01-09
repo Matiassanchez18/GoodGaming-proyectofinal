@@ -67,6 +67,39 @@
       "JuegoDeSemana": "true",
       "Consola": "ps4",
       "id": 7
+    },
+    {
+      "Juego": "Destiny 2",
+      "precio": "26.000",
+      "imagen": "https://minicuotas.ribeiro.com.ar/images/products/large/086120097000.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Lucha"
+      ],
+      "breve": "adadwadawdawdawdawd",
+      "amplio": "awdawdawdwdwdawdawdawdawdwad",
+      "Desarrollador": "wdadw",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+      "id": 8
+    },
+    {
+      "Juego": "Ratchet clan",
+      "precio": "45.000",
+      "imagen": "https://arsonyb2c.vtexassets.com/arquivos/ids/361913/RATCHETCLANK-HITS-PACK1.jpg?v=638138802692870000",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Lucha"
+      ],
+      "breve": "eadwdwadawdawd",
+      "amplio": "awdawdawdawdawdawdawdawd",
+      "Desarrollador": "wdawdaw",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 9
     }
   ]
 }
