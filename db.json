@@ -1,19 +1,175 @@
 {
-  "posts": [
+  "productos": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "Juego": "CTR ",
+      "precio": "5.000",
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDgtHw1KIqwlK-TuEz--lWYuTCL9lIyCPUsA&s",
+      "Genero": [
+        "Deportes",
+        "RPG",
+        "Estrategia",
+        "Simulación"
+      ],
+      "breve": "wdadawdawdwa",
+      "amplio": "dawdawdswdawadsdwadwaawdawd",
+      "Desarrollador": "awdawdwddsdawsdwdasd",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+      "id": 4
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "Juego": "GOD",
+      "precio": "45.000",
+      "imagen": "https://http2.mlstatic.com/D_NQ_NP_890564-MLA54008978956_022023-O.webp",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Simulación"
+      ],
+      "breve": "awdawdawdwadaw",
+      "amplio": "dawdawdawdawdawdawdwadwad",
+      "Desarrollador": "dwwadawdawd",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+      "id": 5
+    },
+    {
+      "Juego": "Uncharted",
+      "precio": "28.000",
+      "imagen": "https://s3.us-east-2.amazonaws.com/ccp-prd-s3-uploads/2018/11/22/e17684391b88d44fc0e76d9b68edc36f38b2ee05.jpeg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Lucha"
+      ],
+      "breve": "2ewq2ewdawdwadawd",
+      "amplio": "awdawdwadwadwadawdawdwadawdawdwaddwadawdawdsadasbchasdeydgaeyufgayugdaugdyagawgdagdyadyagwdgawdgawdgawydgawydgawygdyaw",
+      "Desarrollador": "awwdawd",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+      "id": 6
+    },
+    {
+      "Juego": "The last of us",
+      "precio": "67.000",
+      "imagen": "https://ps4digitalchile.com/files/images/productos/1594745236-the-last-of-us-part-ii-ps4.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Terror",
+        "Lucha",
+        "Survival"
+      ],
+      "breve": "awdwadawdawd",
+      "amplio": "awdawdawdawdawdawdwadwd",
+      "Desarrollador": "awdawd",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+      "id": 7
+    },
+    {
+      "Juego": "Destiny 2",
+      "precio": "26.000",
+      "imagen": "https://minicuotas.ribeiro.com.ar/images/products/large/086120097000.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Lucha"
+      ],
+      "breve": "adadwadawdawdawdawd",
+      "amplio": "awdawdawdwdwdawdawdawdawdwad",
+      "Desarrollador": "wdadw",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+      "id": 8
+    },
+    {
+      "Juego": "Ratchet clan",
+      "precio": "45.000",
+      "imagen": "https://arsonyb2c.vtexassets.com/arquivos/ids/361913/RATCHETCLANK-HITS-PACK1.jpg?v=638138802692870000",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Lucha"
+      ],
+      "breve": "eadwdwadawdawd",
+      "amplio": "awdawdawdawdawdawdawdawd",
+      "Desarrollador": "wdawdaw",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 9
+    },
+    {
+      "Juego": "Horizon ",
+      "precio": "70.000",
+      "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1002/10025796/1563-horizon-forbidden-west-ps4.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Simulación",
+        "Lucha"
+      ],
+      "breve": "daewdadawdwdsadawdawd",
+      "amplio": "awdwadawdawwdsdawdawdasdaw",
+      "Desarrollador": "dawdawdawdawd",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 10
+    },
+    {
+      "Juego": "Sekiro",
+      "precio": "60.000",
+      "imagen": "https://m.media-amazon.com/images/I/51Ickg6fQmL._SL500_.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Simulación",
+        "Indie"
+      ],
+      "breve": "faefacawdawdawdawd",
+      "amplio": "awdawdawdwadwadawdawdawdawd",
+      "Desarrollador": "awdwdwda",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 11
+    },
+    {
+      "Juego": "It takes Two",
+      "precio": "58.000",
+      "imagen": "https://nextgames.com.ar/img/Public/1040/2743-producto-61fhtviuirl-sl1007.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Simulación"
+      ],
+      "breve": "faeawdawdawdawdawd",
+      "amplio": "awdawdawdawdawdawdawdawd",
+      "Desarrollador": "wdawdaw",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 12
+    },
+    {
+      "Juego": "Battefield",
+      "precio": "43.000",
+      "imagen": "https://www.gamecenter.com.mx/18177-home_default/battlefield-2042-ps4.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Simulación",
+        "Multijugador"
+      ],
+      "breve": "awdwwdwdadawd",
+      "amplio": "q24wdawxwdawdawdawdawd",
+      "Desarrollador": "awdawdawdawdawdawdawd",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 13
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
