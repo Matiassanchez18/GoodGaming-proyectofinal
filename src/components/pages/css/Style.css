@@ -84,7 +84,11 @@
     object-fit: cover;
   } 
   
-
+/* DetalleProducto */
+.ImagenDetalleProducto{
+  width: 100%;
+  height: auto;
+}
   
 
 
