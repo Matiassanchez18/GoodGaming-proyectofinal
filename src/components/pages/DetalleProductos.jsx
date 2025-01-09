@@ -2,46 +2,47 @@ import React, { useState } from "react";
 import "./css/Style.css";
 
 const DetalleProductos = () => {
-  // Estado para la calificación (puedes simular la calificación y los comentarios)
-  const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState("");
-  const [commentsList, setCommentsList] = useState([
+  
+  const [Estrellas, setEstrellas] = useState(0); // Estado de la calificación
+  const [Comentario, setComentario] = useState(""); // Estado del comentario
+  const [ComentariosList, setComentariosList] = useState([ // Lista de comentarios inicial
     {
       user: "Juan Perez",
       text: "¡Me encantó el juego! La historia es increíble.",
-      rating: 5,
+      Estrellas: 5,
     },
     {
       user: "Maria Gómez",
       text: "Buen juego, pero algunas secciones son un poco repetitivas.",
-      rating: 4,
+      Estrellas: 4,
     },
   ]);
 
-  // Función para manejar el cambio en los comentarios
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
+  // Función para manejar cambios en el comentario
+  const handleComentarioChange = (event) => {
+    setComentario(event.target.value);
   };
 
-  // Función para manejar el envío del comentario
-  const handleCommentSubmit = (event) => {
+  // Función para manejar el envío de comentario
+  const handleComentarioSubmit = (event) => {
     event.preventDefault();
-    if (comment.trim()) {
-      setCommentsList([
-        ...commentsList,
+    if (Comentario.trim()) {
+      setComentariosList([
+        ...ComentariosList,
         {
           user: "Nuevo Usuario",
-          text: comment,
-          rating: rating,
+          text: Comentario,
+          Estrellas: Estrellas, 
         },
       ]);
-      setComment(""); // Limpiar el campo de comentario
+      setComentario(""); // Limpiar el comentario
+      setEstrellas(0);   // Limpiar la calificación
     }
   };
 
-  // Función para manejar el cambio de calificación
-  const handleRatingChange = (newRating) => {
-    setRating(newRating);
+  // Función para manejar el cambio de estrellas
+  const handleEstrellasChange = (newEstrellas) => {
+    setEstrellas(newEstrellas);  
   };
 
   return (
@@ -50,16 +51,14 @@ const DetalleProductos = () => {
         <div className="col-12 col-md-8">
           <div className="card custom-card shadow-sm rounded">
             <div className="row no-gutters">
-              {/* Imagen del Producto */}
               <div className="col-md-5">
                 <img
                   src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2019/10/caratula-last-us-parte-ii.jpg?tf=3840x"
                   alt="Imagen del producto"
-                  className="card-img-top custom-card-img"
+                  className="ImagenDetalleProducto"
                 />
               </div>
 
-              {/* Detalles del Producto */}
               <div className="col-md-7">
                 <div className="card-body custom-card-body">
                   <h4 className="card-title">The Last of Us Parte II</h4>
@@ -78,15 +77,15 @@ const DetalleProductos = () => {
 
             {/* Sección de calificación */}
             <div className="card-footer">
-              <h5 className="rating-title">Calificación</h5>
-              <div className="rating">
+              <h5 className="Calificacion-titulo">Calificación</h5>
+              <div className="Calificacion">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <span
                     key={star}
-                    className={`star ${rating >= star ? "filled" : ""}`}
-                    onClick={() => handleRatingChange(star)}
+                    className={`Estrella ${Estrellas >= star ? "filled" : ""}`}
+                    onClick={() => handleEstrellasChange(star)} 
                   >
-                    &#9733;
+                    &#9733; {/* Estrella de la calificación */}
                   </span>
                 ))}
               </div>
@@ -95,14 +94,14 @@ const DetalleProductos = () => {
             {/* Sección de comentarios */}
             <div className="card-body">
               <h5>Comentarios</h5>
-              <form onSubmit={handleCommentSubmit}>
+              <form onSubmit={handleComentarioSubmit}>
                 <div className="mb-3">
                   <textarea
                     className="form-control"
                     rows="3"
                     placeholder="Deja tu comentario"
-                    value={comment}
-                    onChange={handleCommentChange}
+                    value={Comentario}
+                    onChange={handleComentarioChange}
                   />
                 </div>
                 <button type="submit" className="btn btn-primary">
@@ -110,11 +109,11 @@ const DetalleProductos = () => {
                 </button>
               </form>
 
-              <div className="comments-list mt-4">
-                {commentsList.map((c, index) => (
-                  <div key={index} className="comment">
+              <div className="Comentarios-list mt-4">
+                {ComentariosList.map((c, index) => (
+                  <div key={index} className="Comentario">
                     <strong>{c.user}</strong> -{" "}
-                    <span className="text-muted">{c.rating} Estrellas</span>
+                    <span className="text-muted">{c.Estrellas} Estrellas</span>
                     <p>{c.text}</p>
                   </div>
                 ))}
@@ -128,5 +127,10 @@ const DetalleProductos = () => {
 };
 
 export default DetalleProductos;
+
+
+  
+
+
 
 
