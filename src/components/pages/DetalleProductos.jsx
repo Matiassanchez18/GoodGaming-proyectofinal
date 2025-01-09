@@ -3,11 +3,11 @@ import "./css/Style.css";
 import { useParams } from "react-router";
 import { obtenerJuegos } from "../helpers/queries";
 
+
 const DetalleProductos = () => {
-  
-  const [Estrellas, setEstrellas] = useState(0); 
-  const [Comentario, setComentario] = useState(""); 
-  const [ComentariosList, setComentariosList] = useState([ 
+  const [Estrellas, setEstrellas] = useState(0);
+  const [Comentario, setComentario] = useState("");
+  const [ComentariosList, setComentariosList] = useState([
     {
       user: "Juan Perez",
       text: "¡Me encantó el juego! La historia es increíble.",
@@ -20,29 +20,27 @@ const DetalleProductos = () => {
     },
   ]);
 
-  const [Juegos, setJuegos] = useState({})
+  const [Juegos, setJuegos] = useState({});
 
-  const {id} = useParams();
+  const { id } = useParams();
 
-  useEffect(()=>{
+  useEffect(() => {
     obtenerJuego();
-   }, [])
+  }, []);
 
-  const obtenerJuego = async()=>{
-    const respuesta = await obtenerJuegos(id)
-    if(respuesta.status === 200){
-        const datos = await respuesta.json()
-        setJuegos(datos)
-    }else{
-        alert('Ocurrio un error intente mas tarde')
+  const obtenerJuego = async () => {
+    const respuesta = await obtenerJuegos(id);
+    if (respuesta.status === 200) {
+      const datos = await respuesta.json();
+      setJuegos(datos);
+    } else {
+      alert("Ocurrio un error intente mas tarde");
     }
-  }
+  };
 
-  
   const handleComentarioChange = (event) => {
     setComentario(event.target.value);
   };
-
 
   const handleComentarioSubmit = (event) => {
     event.preventDefault();
@@ -52,17 +50,16 @@ const DetalleProductos = () => {
         {
           user: "Nuevo Usuario",
           text: Comentario,
-          Estrellas: Estrellas, 
+          Estrellas: Estrellas,
         },
       ]);
-      setComentario(""); 
-      setEstrellas(0);   
+      setComentario("");
+      setEstrellas(0);
     }
   };
 
- 
   const handleEstrellasChange = (newEstrellas) => {
-    setEstrellas(newEstrellas);  
+    setEstrellas(newEstrellas);
   };
 
   return (
@@ -82,19 +79,22 @@ const DetalleProductos = () => {
               <div className="col-md-7">
                 <div className="card-body custom-card-body">
                   <h4 className="card-title">{Juegos.Juego}</h4>
-                  <p className="card-text text-muted">Juego para {Juegos.Consola}</p>
-                  <p className="card-description">
-                    {Juegos.amplio}
+                  <p className="card-text text-muted">
+                    Juego para {Juegos.Consola}
                   </p>
+                  <p className="card-description">{Juegos.amplio}</p>
                   <div className="d-flex justify-content-between align-items-center">
-                    <span className="price text-success "><b>${Juegos.precio}</b></span>
-                    <button className="btn btn-outline-dark">Añadir al carrito</button>
+                    <span className="price text-success ">
+                      <b>${Juegos.precio}</b>
+                    </span>
+                    <button className="btn btn-outline-dark">
+                      Añadir al carrito
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            
             <div className="card-footer">
               <h5 className="Calificacion-titulo">Calificación</h5>
               <div className="Calificacion">
@@ -102,7 +102,7 @@ const DetalleProductos = () => {
                   <span
                     key={star}
                     className={`Estrella ${Estrellas >= star ? "filled" : ""}`}
-                    onClick={() => handleEstrellasChange(star)} 
+                    onClick={() => handleEstrellasChange(star)}
                   >
                     &#9733;
                   </span>
@@ -110,7 +110,6 @@ const DetalleProductos = () => {
               </div>
             </div>
 
-            
             <div className="card-body">
               <h5>Comentarios</h5>
               <form onSubmit={handleComentarioSubmit}>
@@ -146,10 +145,3 @@ const DetalleProductos = () => {
 };
 
 export default DetalleProductos;
-
-
-  
-
-
-
-

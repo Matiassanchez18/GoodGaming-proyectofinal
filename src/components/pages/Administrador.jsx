@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { FileEarmarkPlus, PencilSquare, Trash3 } from "react-bootstrap-icons";
+import { FileEarmarkPlus, PencilSquare, Trash3, Eye } from "react-bootstrap-icons";
 import { Link } from "react-router";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import "./css/Style.css";
 import { eliminarProducto, listarProductosAPI } from "../helpers/queries";
 import Swal from "sweetalert2";
+import Modal from 'react-bootstrap/Modal';
 
 const Administrador = () => {
   const [listaJuegos, setlistaJuegos] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [modalJuego, setModalJuego] = useState(null);
 
   useEffect(() => {
     consultarAPI();
@@ -52,6 +55,16 @@ const Administrador = () => {
         confirmButtonText: "ok",
       });
     }
+  };
+
+  const handleShowModal = (Juego) => {
+    setModalJuego(Juego);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setModalJuego(null);
   };
 
   return (
@@ -100,15 +113,46 @@ const Administrador = () => {
                   variant="danger"
                   onClick={() => borrarProducto(Juego.id)}
                 >
-                  <Trash3></Trash3>
+                  <Trash3 />
+                </Button>
+                
+                <Button
+                  variant="primary"
+                  className="ms-4"
+                  onClick={() => handleShowModal(Juego)}
+                >
+                  <Eye />
                 </Button>
               </td>
             </tr>
           ))}
         </tbody>
       </Table>
+
+      {modalJuego && (
+        <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>{modalJuego.Juego}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p><strong>Precio:</strong> {modalJuego.precio}</p>
+            <p><strong>Categoria:</strong> {modalJuego.opcion}</p>
+            <p><strong>URL Imagen:</strong> {modalJuego.imagen}</p>
+            <p><strong>Descripcion amplia:</strong> {modalJuego.amplio}</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleCloseModal}>
+              Aceptar
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </section>
   );
 };
 
 export default Administrador;
+
