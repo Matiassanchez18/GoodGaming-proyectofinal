@@ -82,7 +82,6 @@ const DetalleProductos = () => {
                   </p>
                   <p className="card-description">{Juegos.amplio}</p>
 
-                  {/* Aquí los géneros se visualizan como botones de píldora */}
                   <div className="mb-3">
                     {Juegos.Genero && Array.isArray(Juegos.Genero)
                       ? Juegos.Genero.map((genero, index) => (
