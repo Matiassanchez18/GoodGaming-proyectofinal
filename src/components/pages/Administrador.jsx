@@ -136,7 +136,7 @@ const Administrador = () => {
           </Modal.Header>
           <Modal.Body>
             <p><strong>Precio:</strong> {modalJuego.precio}</p>
-            <p><strong>Categoria:</strong> {modalJuego.opcion}</p>
+            <p><strong>Genero:</strong> {modalJuego.Genero}</p>
             <p><strong>URL Imagen:</strong> {modalJuego.imagen}</p>
             <p><strong>Descripcion amplia:</strong> {modalJuego.amplio}</p>
           </Modal.Body>
