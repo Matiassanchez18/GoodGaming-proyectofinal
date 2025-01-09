@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
-import { crearProductoAPI, obtenerJuegos } from "../helpers/queries";
+import { crearProductoAPI, editarProductoAPI, obtenerJuegos } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { useParams } from "react-router";
 
@@ -20,7 +20,7 @@ const FormularioJuego = ({ crearProducto }) => {
     if (crearProducto === false) {
       cargarProducto();
     }
-  },[]);
+  }, []);
 
   const { id } = useParams();
 
@@ -44,22 +44,31 @@ const FormularioJuego = ({ crearProducto }) => {
   };
 
   const onSubmit = async (Juego) => {
-    console.log(Juego);
-    const respuesta = await crearProductoAPI(Juego);
-    if (respuesta.status === 201) {
-      Swal.fire({
-        title: "Se creo el juego con exito!",
-        icon: "success",
-        draggable: false,
-      });
-      reset();
+    if (crearProducto === true) {
+      console.log(Juego);
+      const respuesta = await crearProductoAPI(Juego);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Se creo el juego con exito!",
+          icon: "success",
+          draggable: false,
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrio un erro por favor intentelo mas tarde 1!",
+          text: "Quieres continuar",
+          icon: "error",
+          confirmButtonText: "ok",
+        });
+      }
     } else {
-      Swal.fire({
-        title: "Ocurrio un erro por favor intentelo mas tarde!",
-        text: "Quieres continuar",
-        icon: "error",
-        confirmButtonText: "ok",
-      });
+      const respuesta = await editarProductoAPI(Juego, id);
+      if(respuesta.status === 200){
+        alert('el producto fue actualizado')
+      }else{
+        alert('ocurrio un error intenta mas tarde 2')
+      }
     }
   };
 
