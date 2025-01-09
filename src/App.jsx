@@ -14,21 +14,34 @@ import DetalleProductos from "./components/pages/DetalleProductos";
 import AcercadeNostros from "./components/pages/AcercadeNostros";
 
 function App() {
-
-
   return (
     <>
       <BrowserRouter>
         <Menu></Menu>
         <Routes>
-          <Route path="/" element={<Inicio></Inicio>}/>
-          <Route path="/Juegos" element={<Juegos></Juegos>}/>
-          <Route path="/Administrador" element={<Administrador></Administrador>}/>
-          <Route path="/Administrador/FormularioJuego"crearProducto={true}  element={<FormularioJuego></FormularioJuego>}/>
-          <Route path="/Administrador/FormularioJuego/editar/:id" element={<FormularioJuego crearProducto={false} />} />
-          <Route path="/Login" element={<Login></Login>}/>
-          <Route path="/DetalleProductos/:id" element={<DetalleProductos></DetalleProductos>}/>
-          <Route path="/AcercadeNostros" element={<AcercadeNostros></AcercadeNostros>}/>
+          <Route path="/" element={<Inicio></Inicio>} />
+          <Route path="/Juegos" element={<Juegos></Juegos>} />
+          <Route
+            path="/Administrador"
+            element={<Administrador></Administrador>}
+          />
+          <Route
+            path="/Administrador/FormularioJuego"
+            element={<FormularioJuego crearProducto={true} />}
+          />
+          <Route
+            path="/Administrador/FormularioJuego/editar/:id"
+            element={<FormularioJuego crearProducto={false} />}
+          />
+          <Route path="/Login" element={<Login></Login>} />
+          <Route
+            path="/DetalleProductos/:id"
+            element={<DetalleProductos></DetalleProductos>}
+          />
+          <Route
+            path="/AcercadeNostros"
+            element={<AcercadeNostros></AcercadeNostros>}
+          />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

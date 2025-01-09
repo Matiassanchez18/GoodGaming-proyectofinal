@@ -1,22 +1,6 @@
 {
   "productos": [
     {
-      "Juego": "Draft Racing",
-      "precio": "80.000",
-      "imagen": "https://acdn.mitiendanube.com/stores/001/067/161/products/cover-ps411-d4222bf5761c619e0216845170792071-1024-1024.jpg",
-      "Genero": [
-        "Acción",
-        "RPG",
-        "Plataforma"
-      ],
-      "breve": "waddawdawdasdawdsdawd",
-      "amplio": "sdawdsdawsdawsdawdsawd",
-      "Desarrollador": "adawdasdawd",
-      "JuegoDeSemana": "true",
-      "Consola": "ps4",
-      "id": 3
-    },
-    {
       "Juego": "CTR ",
       "precio": "5.000",
       "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDgtHw1KIqwlK-TuEz--lWYuTCL9lIyCPUsA&s",
