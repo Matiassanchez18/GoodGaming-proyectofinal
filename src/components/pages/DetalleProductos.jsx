@@ -76,13 +76,12 @@ const DetalleProductos = () => {
               </div>
               <div className="col-md-7">
                 <div className="card-body custom-card-body">
+                  <p>Codigo: #{Juegos.id}</p>
                   <h4 className="card-title">{Juegos.Juego}</h4>
                   <p className="card-text text-muted">
                     Juego para {Juegos.Consola}
                   </p>
                   <p className="card-description">{Juegos.amplio}</p>
-
-                  {/* Aquí los géneros se visualizan como botones de píldora */}
                   <div className="mb-3">
                     {Juegos.Genero && Array.isArray(Juegos.Genero)
                       ? Juegos.Genero.map((genero, index) => (
