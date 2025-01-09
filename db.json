@@ -100,6 +100,76 @@
       "JuegoDeSemana": "false",
       "Consola": "ps4",
       "id": 9
+    },
+    {
+      "Juego": "Horizon ",
+      "precio": "70.000",
+      "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1002/10025796/1563-horizon-forbidden-west-ps4.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Simulación",
+        "Lucha"
+      ],
+      "breve": "daewdadawdwdsadawdawd",
+      "amplio": "awdwadawdawwdsdawdawdasdaw",
+      "Desarrollador": "dawdawdawdawd",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 10
+    },
+    {
+      "Juego": "Sekiro",
+      "precio": "60.000",
+      "imagen": "https://m.media-amazon.com/images/I/51Ickg6fQmL._SL500_.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Simulación",
+        "Indie"
+      ],
+      "breve": "faefacawdawdawdawd",
+      "amplio": "awdawdawdwadwadawdawdawdawd",
+      "Desarrollador": "awdwdwda",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 11
+    },
+    {
+      "Juego": "It takes Two",
+      "precio": "58.000",
+      "imagen": "https://nextgames.com.ar/img/Public/1040/2743-producto-61fhtviuirl-sl1007.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Simulación"
+      ],
+      "breve": "faeawdawdawdawdawd",
+      "amplio": "awdawdawdawdawdawdawdawd",
+      "Desarrollador": "wdawdaw",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 12
+    },
+    {
+      "Juego": "Battefield",
+      "precio": "43.000",
+      "imagen": "https://www.gamecenter.com.mx/18177-home_default/battlefield-2042-ps4.jpg",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Estrategia",
+        "Simulación",
+        "Multijugador"
+      ],
+      "breve": "awdwwdwdadawd",
+      "amplio": "q24wdawxwdawdawdawdawd",
+      "Desarrollador": "awdawdawdawdawdawdawd",
+      "JuegoDeSemana": "false",
+      "Consola": "ps4",
+      "id": 13
     }
   ]
 }

@@ -149,70 +149,71 @@ const Inicio = () => {
           </div>
         </article>
 
-        <article className="container mt-5 ">
-          <div className="d-flex justify-content-between border-bottom align-items-center">
-            <h2 className="mb-0">Juegos PS4</h2>
-            <Link to={"/Juegos"} className="text-decoration-none ">
-              <h4 className="mb-0">Ver más</h4>
-            </Link>
+        <article className="container mt-5">
+  <div className="d-flex justify-content-between border-bottom align-items-center">
+    <h2 className="mb-0">Juegos PS4</h2>
+    <Link to={"/Juegos"} className="text-decoration-none">
+      <h4 className="mb-0">Ver más</h4>
+    </Link>
+  </div>
+
+  <div className="d-flex align-items-center">
+    <Button
+      variant="link"
+      onClick={scrollLeft2}
+      className="fs-3 text-dark arrow-btn"
+      aria-label="Scroll left"
+    >
+      <ChevronDoubleLeft />
+    </Button>
+
+    <div
+      ref={carouselRef2}
+      className="d-flex overflow-auto mt-4 card-container"
+    >
+      {juegosFiltradosPS4.length > 0 ? (
+        // Limitamos a los primeros 8 juegos
+        juegosFiltradosPS4.slice(0, 8).map((juego) => (
+          <div className="col-12 col-lg-3 col-md-3 mt-3" key={juego.id}>
+            <Card className="product-card h-100 rounded">
+              <Card.Img
+                variant="top"
+                src={juego.imagen}
+                alt={juego.Juego}
+                className="rounded-top"
+              />
+              <Card.Body>
+                <ul className="list-unstyled">
+                  <li className="fs-5">
+                    <b>{juego.Juego}</b>
+                  </li>
+                  <li className="text-success">
+                    <b>Precio: {juego.precio}</b>
+                  </li>
+                </ul>
+                <Link to={"/DetalleProductos/" + juego.id} className="btn btn-primary w-100">
+                  Ver más
+                </Link>
+              </Card.Body>
+            </Card>
           </div>
+        ))
+      ) : (
+        <p>Ocurrió un error, intenta más tarde</p>
+      )}
+    </div>
 
-          <div className="d-flex align-items-center">
-            <Button
-              variant="link"
-              onClick={scrollLeft2}
-              className="fs-3 text-dark arrow-btn"
-              aria-label="Scroll left"
-            >
-              <ChevronDoubleLeft></ChevronDoubleLeft>
-            </Button>
+    <Button
+      variant="link"
+      onClick={scrollRight2}
+      className="fs-3 text-dark arrow-btn"
+      aria-label="Scroll right"
+    >
+      <ChevronDoubleRight />
+    </Button>
+  </div>
+</article>
 
-            <div
-              ref={carouselRef2}
-              className="d-flex overflow-auto mt-4 card-container"
-            >
-              {juegosFiltradosPS4.length >= 5 ? (
-                
-                juegosFiltradosPS4.map((juego) => (
-                  <div className="col-12 col-lg-3 col-md-3 mt-3" key={juego.id}>
-                    <Card className="product-card h-100 rounded">
-                      <Card.Img
-                        variant="top"
-                        src={juego.imagen}
-                        alt={juego.Juego}
-                        className="rounded-top"
-                      />
-                      <Card.Body>
-                        <ul className="list-unstyled">
-                          <li className="fs-5">
-                            <b>{juego.Juego}</b>
-                          </li>
-                          <li className="text-success">
-                            <b>Precio: {juego.precio}</b>
-                          </li>
-                        </ul>
-                        <Link to={"/DetalleProductos/"+juego.id} className="btn btn-primary w-100" >
-                          Ver más
-                        </Link>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                ))
-              ) : (
-                <p>Ocurrio un error intentalo mas tarde</p>
-              )}
-            </div>
-
-            <Button
-              variant="link"
-              onClick={scrollRight2}
-              className="fs-3 text-dark arrow-btn"
-              aria-label="Scroll right"
-            >
-              <ChevronDoubleRight></ChevronDoubleRight>
-            </Button>
-          </div>
-        </article>
       </section>
     </div>
   );
