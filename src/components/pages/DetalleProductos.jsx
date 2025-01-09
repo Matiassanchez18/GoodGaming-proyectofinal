@@ -3,7 +3,6 @@ import "./css/Style.css";
 import { useParams } from "react-router";
 import { obtenerJuegos } from "../helpers/queries";
 
-
 const DetalleProductos = () => {
   const [Estrellas, setEstrellas] = useState(0);
   const [Comentario, setComentario] = useState("");
@@ -75,7 +74,6 @@ const DetalleProductos = () => {
                   className="ImagenDetalleProducto"
                 />
               </div>
-
               <div className="col-md-7">
                 <div className="card-body custom-card-body">
                   <h4 className="card-title">{Juegos.Juego}</h4>
@@ -83,8 +81,30 @@ const DetalleProductos = () => {
                     Juego para {Juegos.Consola}
                   </p>
                   <p className="card-description">{Juegos.amplio}</p>
+
+                  {/* Aquí los géneros se visualizan como botones de píldora */}
+                  <div className="mb-3">
+                    {Juegos.Genero && Array.isArray(Juegos.Genero)
+                      ? Juegos.Genero.map((genero, index) => (
+                          <span
+                            key={index}
+                            className="badge rounded-pill bg-secondary me-2 mb-2"
+                          >
+                            {genero}
+                          </span>
+                        ))
+                      : Juegos.Genero?.split(",").map((genero, index) => (
+                          <span
+                            key={index}
+                            className="badge rounded-pill bg-secondary me-2 mb-2"
+                          >
+                            {genero.trim()}
+                          </span>
+                        ))}
+                  </div>
+
                   <div className="d-flex justify-content-between align-items-center">
-                    <span className="price text-success ">
+                    <span className="price text-success">
                       <b>${Juegos.precio}</b>
                     </span>
                     <button className="btn btn-outline-dark">
