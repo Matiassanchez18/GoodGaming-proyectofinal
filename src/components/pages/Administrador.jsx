@@ -130,26 +130,25 @@ const Administrador = () => {
       </Table>
 
       {modalJuego && (
-        <Modal show={showModal} onHide={handleCloseModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>{modalJuego.Juego}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p><strong>Precio:</strong> {modalJuego.precio}</p>
-            <p><strong>Genero:</strong> {modalJuego.Genero}</p>
-            <p><strong>URL Imagen:</strong> {modalJuego.imagen}</p>
-            <p><strong>Descripcion amplia:</strong> {modalJuego.amplio}</p>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleCloseModal}>
-              Aceptar
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      )}
+  <Modal show={showModal} onHide={handleCloseModal}>
+    <Modal.Header closeButton>
+      <Modal.Title>{modalJuego.Juego}</Modal.Title>
+      <img src={modalJuego.imagen} alt="" className="ms-3 w-25" />
+    </Modal.Header>
+    <Modal.Body className="ModalContenido">
+      <p><b>Precio:</b> {modalJuego.precio}</p>
+      <p><b>Genero:</b> {modalJuego.Genero}</p>
+      <p><b>Descripcion amplia:</b> {modalJuego.amplio}</p>
+      <p><b>Descripcion breve:</b> {modalJuego.breve}</p>
+    </Modal.Body>
+    <Modal.Footer>
+      <Button variant="primary" onClick={handleCloseModal}>
+        cerrar
+      </Button>
+    </Modal.Footer>
+  </Modal>
+)}
+
     </section>
   );
 };

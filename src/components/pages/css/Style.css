@@ -90,6 +90,11 @@
   height: auto;
 }
   
+.ModalContenido {
+  max-height: 400px; 
+  overflow-y: auto;   
+}
+
 /* Estilos generales */
 body {
   font-family: 'Helvetica Neue', sans-serif;
@@ -147,7 +152,6 @@ body {
 .rezine{
   resize: none;
 }
-
 
 
 
