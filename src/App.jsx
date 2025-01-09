@@ -22,7 +22,8 @@ function App() {
           <Route path="/" element={<Inicio></Inicio>}/>
           <Route path="/Juegos" element={<Juegos></Juegos>}/>
           <Route path="/Administrador" element={<Administrador></Administrador>}/>
-          <Route path="/Administrador/FormularioJuego" element={<FormularioJuego></FormularioJuego>}/>
+          <Route path="/Administrador/FormularioJuego"crearProducto={true}  element={<FormularioJuego></FormularioJuego>}/>
+          <Route path="/Administrador/FormularioJuego/editar/:id" element={<FormularioJuego crearProducto={false} />} />
           <Route path="/Login" element={<Login></Login>}/>
         </Routes>
         <Footer></Footer>

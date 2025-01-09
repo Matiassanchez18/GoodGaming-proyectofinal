@@ -5,8 +5,7 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import "./css/Style.css";
 import { eliminarProducto, listarProductosAPI } from "../helpers/queries";
-import Swal from 'sweetalert2'
-
+import Swal from "sweetalert2";
 
 const Administrador = () => {
   const [listaJuegos, setlistaJuegos] = useState([]);
@@ -29,29 +28,29 @@ const Administrador = () => {
     const respuesta = await eliminarProducto(JuegoId);
     if (respuesta.status === 200) {
       Swal.fire({
-            title: "El articulo se elimino correctamente!",
-            icon: "success",
-            draggable: false
-          });
+        title: "El articulo se elimino correctamente!",
+        icon: "success",
+        draggable: false,
+      });
       const respuestaJuego = await listarProductosAPI();
       if (respuestaJuego.status === 200) {
         const datos = await respuestaJuego.json();
         setlistaJuegos(datos);
       } else {
-         Swal.fire({
-              title: 'Ocurrio un erro por favor intentelo mas tarde!',
-              text: 'Quieres continuar',
-              icon: 'error',
-              confirmButtonText: 'ok'
-            })
+        Swal.fire({
+          title: "Ocurrio un erro por favor intentelo mas tarde!",
+          text: "Quieres continuar",
+          icon: "error",
+          confirmButtonText: "ok",
+        });
       }
     } else {
       Swal.fire({
-        title: 'Ocurrio un erro por favor intentelo mas tarde!',
-        text: 'Quieres continuar',
-        icon: 'error',
-        confirmButtonText: 'ok'
-      })
+        title: "Ocurrio un erro por favor intentelo mas tarde!",
+        text: "Quieres continuar",
+        icon: "error",
+        confirmButtonText: "ok",
+      });
     }
   };
 
@@ -91,13 +90,16 @@ const Administrador = () => {
               <td>{Juego.opcion}</td>
               <td>
                 <Link
-                  to={`/administrador/FormularioJuego/editar/${Juego.id}`}
+                  to={`/Administrador/FormularioJuego/editar/${Juego.id}`}
                   className="btn btn-warning me-4 ms-4"
                 >
                   <PencilSquare />
                 </Link>
 
-                <Button variant="danger" onClick={()=> borrarProducto(Juego.id)}>
+                <Button
+                  variant="danger"
+                  onClick={() => borrarProducto(Juego.id)}
+                >
                   <Trash3></Trash3>
                 </Button>
               </td>
