@@ -1,20 +1,6 @@
 {
   "productos": [
     {
-      "Juego": "Recident evil",
-      "precio": "60.000",
-      "imagen": "https://www.vidrieraonline.com.ar/img-load/img/221/260/1/e865e34e39227944864fd3e4ffdf78da.jpg",
-      "Genero": [
-        "Simulación"
-      ],
-      "breve": "dadawd",
-      "amplio": "awdawdawdawawdawdawd",
-      "Desarrollador": "awdawdawdawdawd",
-      "opcion": "",
-      "JuegoDeSemana": "true",
-      "id": 2
-    },
-    {
       "Juego": "Draft Racing",
       "precio": "45.000",
       "imagen": "https://acdn.mitiendanube.com/stores/001/067/161/products/cover-ps411-d4222bf5761c619e0216845170792071-1024-1024.jpg",
