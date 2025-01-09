@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
-import { crearProductoAPI } from "../helpers/queries";
-import Swal from 'sweetalert2'
+import { crearProductoAPI, obtenerJuegos } from "../helpers/queries";
+import Swal from "sweetalert2";
+import { useParams } from "react-router";
 
-const FormularioJuego = () => {
+const FormularioJuego = ({ crearProducto }) => {
   const {
     register,
     handleSubmit,
@@ -15,31 +16,60 @@ const FormularioJuego = () => {
     setValue,
   } = useForm();
 
-  const onSubmit = async(Juego) => {
-   console.log(Juego)
-   const respuesta = await crearProductoAPI(Juego)
-   if (respuesta.status === 201) {
-    Swal.fire({
-      title: "Se creo el juego con exito!",
-      icon: "success",
-      draggable: false
-    });
-    reset();
-  } else {
-    Swal.fire({
-      title: 'Ocurrio un erro por favor intentelo mas tarde!',
-      text: 'Quieres continuar',
-      icon: 'error',
-      confirmButtonText: 'ok'
-    })
-  }
+  useEffect(() => {
+    if (crearProducto === false) {
+      cargarProducto();
+    }
+  },[]);
+
+  const { id } = useParams();
+
+  const cargarProducto = async () => {
+    const respuesta = await obtenerJuegos(id);
+    if (respuesta.status === 200) {
+      const datos = await respuesta.json();
+      console.log(datos);
+      setValue("Juego", datos.Juego);
+      setValue("precio", datos.precio);
+      setValue("imagen", datos.imagen);
+      setValue("Genero", datos.Genero);
+      setValue("breve", datos.breve);
+      setValue("amplio", datos.amplio);
+      setValue("Desarrollador", datos.Desarrollador);
+      setValue("JuegoDeSemana", datos.JuegoDeSemana);
+      setValue("Consola", datos.Consola);
+    } else {
+      alert("Intente mas tarder, ocurriio un error");
+    }
+  };
+
+  const onSubmit = async (Juego) => {
+    console.log(Juego);
+    const respuesta = await crearProductoAPI(Juego);
+    if (respuesta.status === 201) {
+      Swal.fire({
+        title: "Se creo el juego con exito!",
+        icon: "success",
+        draggable: false,
+      });
+      reset();
+    } else {
+      Swal.fire({
+        title: "Ocurrio un erro por favor intentelo mas tarde!",
+        text: "Quieres continuar",
+        icon: "error",
+        confirmButtonText: "ok",
+      });
+    }
   };
 
   return (
     <section className="container">
       <p className="fs-1 mt-5 border-bottom">Administrar Juegos</p>
-      <form className="container border shadow p-4 rounded" onSubmit={handleSubmit(onSubmit)}>
-        
+      <form
+        className="container border shadow p-4 rounded"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <Form.Group className="mb-3" controlId="Juego">
           <Form.Label>Juego*</Form.Label>
           <Form.Control
@@ -62,7 +92,6 @@ const FormularioJuego = () => {
           </Form.Text>
         </Form.Group>
 
-        
         <Form.Group className="mb-3" controlId="Precio">
           <Form.Label>Precio*</Form.Label>
           <Form.Control
@@ -85,7 +114,6 @@ const FormularioJuego = () => {
           </Form.Text>
         </Form.Group>
 
-       
         <Form.Group className="mb-3" controlId="Imagen">
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
@@ -100,7 +128,6 @@ const FormularioJuego = () => {
           </Form.Text>
         </Form.Group>
 
-       
         <Form.Group className="mb-3">
           <Form.Label>Categoría del producto*</Form.Label>
           <div>
@@ -142,7 +169,6 @@ const FormularioJuego = () => {
           </Form.Text>
         </Form.Group>
 
-       
         <FloatingLabel
           controlId="Breve"
           label="Descripción breve"
@@ -168,7 +194,6 @@ const FormularioJuego = () => {
           </Form.Text>
         </FloatingLabel>
 
-        
         <FloatingLabel
           controlId="Amplia"
           label="Descripción amplia"
@@ -247,7 +272,6 @@ const FormularioJuego = () => {
           </Form.Text>
         </Form.Group>
 
-        
         <Button variant="success" type="submit" className="mt-5">
           Guardar
         </Button>
