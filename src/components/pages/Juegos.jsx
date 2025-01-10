@@ -70,13 +70,14 @@ const Juegos = () => {
           <div className="row">
             {JuegosFlitradosBusqueda.length > 0 ? (
               JuegosFlitradosBusqueda.map((juego) => (
-                <div key={juego.id} className="col-6 col-lg-3 col-md-3 mt-3">
+                <div key={juego.id} className="col-12 col-lg-3 col-md-3 mt-3">
                   <Card className="product-card h-100 rounded">
                     <Card.Img
                       variant="top"
                       src={juego.imagen}
                       alt={juego.Juego}
-                      className="rounded-top"
+                      className="rounded-top h-100"
+                       
                     />
                     <Card.Body>
                       <ul className="list-unstyled">
