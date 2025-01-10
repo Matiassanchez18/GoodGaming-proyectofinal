@@ -19,6 +19,7 @@ const Menu = () => {
               <NavLink  className="nav-link" to={"/Juegos"}>Juegos</NavLink>
               <NavLink  className="nav-link" to={"/AcercadeNostros"}>Acerca de Nosotros</NavLink>
               <NavLink  className="nav-link" to={"/Administrador"}>Administrador</NavLink>
+              <NavLink  className="nav-link" to={"/Login"}>Login</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

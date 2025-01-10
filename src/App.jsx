@@ -38,10 +38,8 @@ function App() {
             path="/DetalleProductos/:id"
             element={<DetalleProductos></DetalleProductos>}
           />
-          <Route
-            path="/AcercadeNostros"
-            element={<AcercadeNostros></AcercadeNostros>}
-          />
+          <Route path="/AcercadeNostros" element={<AcercadeNostros></AcercadeNostros>}/>
+          <Route path="/Login" element={<Login></Login>}/>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
