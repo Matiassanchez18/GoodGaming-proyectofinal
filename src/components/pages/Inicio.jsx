@@ -134,7 +134,9 @@ const Inicio = () => {
                   </div>
                 ))
               ) : (
-                <p>Ocurrio un error intentalo mas tarde</p>
+                <div className="alert alert-warning text-center fs-4 w-100 mt-4" role="alert">
+                <strong>No hay juegos disponibles</strong>
+              </div>
               )}
             </div>
 
@@ -199,7 +201,9 @@ const Inicio = () => {
           </div>
         ))
       ) : (
-        <p>Ocurrió un error, intenta más tarde</p>
+        <div className="alert alert-warning text-center fs-4 w-100 mt-4" role="alert">
+      <strong>No hay juegos disponibles</strong>
+    </div>
       )}
     </div>
 

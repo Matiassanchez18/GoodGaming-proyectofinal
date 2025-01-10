@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router-dom"; 
+import { Navigate } from "react-router"; 
 
 const ProtectorRutas = ({children}) => {
   const userAdmin = JSON.parse(sessionStorage.getItem("userKey")) || "";
