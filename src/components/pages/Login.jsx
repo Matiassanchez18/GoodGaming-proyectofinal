@@ -33,7 +33,7 @@ const Login = () => {
                 },
               })}
               type="email"
-              placeholder="ej: askdkjdajk@gmail.com"
+              placeholder="ej: admin@admin.com"
               className="form-control-lg"
             />
             <Form.Text className="text-danger mt-2"></Form.Text>
