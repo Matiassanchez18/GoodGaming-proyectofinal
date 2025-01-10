@@ -73,7 +73,7 @@ const userAdmin ={
 } 
 
 export const login = (usuario)=>{
-  if(usuario.email === userAdmin.email && usuario.password === userAdmin.email){
+  if(usuario.email === userAdmin.email && usuario.password === userAdmin.password){
     sessionStorage.setItem('userKey', JSON.stringify(userAdmin.email))
     return true
   }else{

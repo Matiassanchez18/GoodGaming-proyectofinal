@@ -2,20 +2,36 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router";
+import { login } from "../helpers/queries";
 
-const Login = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        reset,
-      } = useForm();
+const Login = ({setusuarioLogeado}) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const navegacion = useNavigate();
+
+  const despuesForm = (usuario) => {
+    console.log(usuario);
+    if (login(usuario)) {
+      setusuarioLogeado(usuario.email);
+      alert("Bienvenido");
+      navegacion("/administrador");
+      reset();
+    } else {
+      alert("El usuario no existe");
+    }
+  };
 
   return (
     <section className="container mt-5">
       <article className="mx-auto border shadow">
         <p className="text-center mt-3">Login</p>
-        <form action="" >
+        <form action="" onSubmit={handleSubmit(despuesForm)}>
           <Form.Group className="mb-3 w-75 mx-auto" controlId="Email">
             <Form.Label>
               <p>Email</p>

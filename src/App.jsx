@@ -14,10 +14,13 @@ import DetalleProductos from "./components/pages/DetalleProductos";
 import AcercadeNostros from "./components/pages/AcercadeNostros";
 
 function App() {
+  const usuario = JSON.parse(sessionStorage.getItem("userKey")) || "";
+  const [usuarioLogeado, setusuarioLogeado] = useState(usuario);
+
   return (
     <>
       <BrowserRouter>
-        <Menu></Menu>
+        <Menu  setusuarioLogeado={setusuarioLogeado} usuarioLogeado={usuarioLogeado}></Menu>
         <Routes>
           <Route path="/" element={<Inicio></Inicio>} />
           <Route path="/Juegos" element={<Juegos></Juegos>} />
@@ -33,13 +36,16 @@ function App() {
             path="/Administrador/FormularioJuego/editar/:id"
             element={<FormularioJuego crearProducto={false} />}
           />
-          <Route path="/Login" element={<Login></Login>} />
+          <Route path="/Login" element={<Login setusuarioLogeado={setusuarioLogeado}></Login>} />
           <Route
             path="/DetalleProductos/:id"
             element={<DetalleProductos></DetalleProductos>}
           />
-          <Route path="/AcercadeNostros" element={<AcercadeNostros></AcercadeNostros>}/>
-          <Route path="/Login" element={<Login></Login>}/>
+          <Route
+            path="/AcercadeNostros"
+            element={<AcercadeNostros></AcercadeNostros>}
+          />
+          <Route path="/Login" element={<Login></Login>} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
