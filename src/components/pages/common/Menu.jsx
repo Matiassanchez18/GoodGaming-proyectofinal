@@ -20,7 +20,7 @@ const Menu = ({ usuarioLogeado, setusuarioLogeado }) => {
   return (
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
+        <Container >
           <NavLink className="nav-link" to={"/"}>
             GoodGamer
           </NavLink>
