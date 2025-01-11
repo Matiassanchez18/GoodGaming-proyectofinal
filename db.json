@@ -170,6 +170,22 @@
       "JuegoDeSemana": "false",
       "Consola": "ps4",
       "id": 13
+    },
+    {
+      "Juego": "Spider-Man",
+      "precio": "45.000",
+      "imagen": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1704385573-81DC-janmJL.jpg?crop=1xw:1xh;center,top&resize=980:*",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Lucha"
+      ],
+      "breve": "dadwddasdawdsdadasdadawdawdsa",
+      "amplio": "dawdasdawdawdsadawdawdawdawdawdawdawdsaawdsdawd",
+      "Desarrollador": "feadawdawdas",
+      "JuegoDeSemana": "false",
+      "Consola": "ps5",
+      "id": 14
     }
   ]
 }

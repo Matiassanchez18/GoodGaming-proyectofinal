@@ -13,6 +13,7 @@ import DetalleProductos from "./components/pages/DetalleProductos";
 import AcercadeNostros from "./components/pages/AcercadeNostros";
 import ProtectorRutas from "./components/routes/ProtectorRutas";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
+import JuegosPs4 from "./components/pages/JuegosPs4";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("userKey")) || "";
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/Juegos" element={<Juegos />} />
+          <Route path="/JuegosPs4" element={<JuegosPs4 />} />
           <Route
             path="/Administrador/*"
             element={
