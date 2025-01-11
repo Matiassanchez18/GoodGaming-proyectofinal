@@ -13,6 +13,7 @@ import { listarProductosAPI } from "../helpers/queries";
 const Inicio = () => {
   const carouselRef = useRef(null);
   const carouselRef2 = useRef(null);
+  const carouselRef3 = useRef(null);
 
   // Funciones para mover el carrusel
   const scrollLeft = () => {
@@ -29,6 +30,14 @@ const Inicio = () => {
 
   const scrollRight2 = () => {
     carouselRef2.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
+  
+  const scrollLeft3 = () => {
+    carouselRef3.current.scrollBy({ left: -300, behavior: "smooth" });
+  };
+
+  const scrollRight3 = () => {
+    carouselRef3.current.scrollBy({ left: 300, behavior: "smooth" });
   };
 
   const [juegosSemanales, setJuegosSemanales] = useState([]);
@@ -229,11 +238,80 @@ const Inicio = () => {
           </div>
         </article>
 
-        <article className="container">
-          <Link>
-          <img src="https://images.pexels.com/photos/7046979/pexels-photo-7046979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Articulos electronicos" className="FlayerInicio"/>
-          </Link>
+        <article className="container mt-5">
+          <div className="d-flex justify-content-between border-bottom align-items-center">
+            <h2 className="mb-0">Juegos PS5</h2>
+            <Link to={"/Juegos"} className="text-decoration-none">
+              <h4 className="mb-0">Ver más</h4>
+            </Link>
+          </div>
+
+          <div className="d-flex align-items-center">
+            <Button
+              variant="link"
+              onClick={scrollLeft3}
+              className="fs-3 text-dark arrow-btn"
+              aria-label="Scroll left"
+            >
+              <ChevronDoubleLeft />
+            </Button>
+
+            <div
+              ref={carouselRef3}
+              className="d-flex overflow-auto mt-4 card-container"
+            >
+              {juegosFiltradosPS4.length > 0 ? (
+                // Limitamos a los primeros 8 juegos
+                juegosFiltradosPS4.slice(0, 8).map((juego) => (
+                  <div className="col-12 col-lg-3 col-md-3 mt-3" key={juego.id}>
+                    <Card className="product-card h-100 rounded">
+                      <Card.Img
+                        variant="top"
+                        src={juego.imagen}
+                        alt={juego.Juego}
+                        className="rounded-top"
+                      />
+                      <Card.Body>
+                        <ul className="list-unstyled">
+                          <li className="fs-5">
+                            <b>{juego.Juego}</b>
+                          </li>
+                          <li className="text-success">
+                            <b>Precio: {juego.precio}</b>
+                          </li>
+                        </ul>
+                        <Link
+                          to={"/DetalleProductos/" + juego.id}
+                          className="btn btn-primary w-100"
+                        >
+                          Ver más
+                        </Link>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                ))
+              ) : (
+                <div
+                  className="alert alert-warning text-center fs-4 w-100 mt-4"
+                  role="alert"
+                >
+                  <strong>No hay juegos disponibles</strong>
+                </div>
+              )}
+            </div>
+
+            <Button
+              variant="link"
+              onClick={scrollRight3}
+              className="fs-3 text-dark arrow-btn"
+              aria-label="Scroll right"
+            >
+              <ChevronDoubleRight />
+            </Button>
+          </div>
         </article>
+
+        
       </section>
     </div>
   );

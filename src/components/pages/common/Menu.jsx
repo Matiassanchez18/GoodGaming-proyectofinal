@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink, useNavigate } from "react-router";
 import { Button } from "react-bootstrap";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 const Menu = ({ usuarioLogeado, setusuarioLogeado }) => {
@@ -31,9 +32,11 @@ const Menu = ({ usuarioLogeado, setusuarioLogeado }) => {
               <NavLink className="nav-link" to={"/"}>
                 Inicio
               </NavLink>
-              <NavLink className="nav-link" to={"/Juegos"}>
-                Juegos
-              </NavLink>
+              <NavDropdown title="Juegos" id="basic-nav-dropdown">
+              <NavDropdown.Item ><NavLink className="nav-link" to={"/Juegos"}>Todos</NavLink></NavDropdown.Item>
+              <NavDropdown.Item ><NavLink className="nav-link" to={"/Juegos"}>Ps4</NavLink></NavDropdown.Item>
+              <NavDropdown.Item ><NavLink className="nav-link" to={"/Juegos"}>Ps5</NavLink></NavDropdown.Item>
+            </NavDropdown>
               <NavLink className="nav-link" to={"/AcercadeNostros"}>
                 Acerca de Nosotros
               </NavLink>
