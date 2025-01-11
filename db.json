@@ -155,21 +155,6 @@
       "id": 13
     },
     {
-<<<<<<< HEAD
-      "Juego": "Spider-Man",
-      "precio": "45.000",
-      "imagen": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1704385573-81DC-janmJL.jpg?crop=1xw:1xh;center,top&resize=980:*",
-      "Genero": [
-        "Acción",
-        "Aventura",
-        "Lucha"
-      ],
-      "breve": "dadwddasdawdsdadasdadawdawdsa",
-      "amplio": "dawdasdawdawdsadawdawdawdawdawdawdawdsaawdsdawd",
-      "Desarrollador": "feadawdawdas",
-      "JuegoDeSemana": "false",
-      "Consola": "ps5",
-=======
       "Juego": "Call of Duty ",
       "precio": "50.000",
       "imagen": "https://oechsle.vteximg.com.br/arquivos/ids/18829019-800-800/image-0.jpg?v=638639529251000000",
@@ -184,8 +169,105 @@
       "Desarrollador": "ARK",
       "JuegoDeSemana": "true",
       "Consola": "ps4",
->>>>>>> 7226668efb4e6c31611cad85eeac02bbf7d1ffed
       "id": 14
+    },
+    {
+      "Juego": "Dead Space",
+      "precio": "34.000",
+      "imagen": "https://i0.wp.com/fhalcongaming.com/wp-content/uploads/2023/01/DEAD-SPACE-PS5.jpg?fit=1080%2C1080&ssl=1",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "RPG",
+        "Estrategia",
+        "Terror",
+        "Lucha"
+      ],
+      "breve": "wadawdawdawdawd",
+      "amplio": "awdawdawdawdawdawdawdawd",
+      "Desarrollador": "wadawwd",
+      "JuegoDeSemana": "false",
+      "Consola": "ps5",
+      "id": 15
+    },
+    {
+      "Juego": "Formula 1",
+      "precio": "10.000",
+      "imagen": "https://storegamesperu.com/files/images/thumbs/productos_300x400_1717198093-f1-24-ps5-0.webp",
+      "Genero": [
+        "Deportes",
+        "Estrategia",
+        "Simulación"
+      ],
+      "breve": "awdawdawdawdawdaw",
+      "amplio": "dawdawdawdawdawdawdawd",
+      "Desarrollador": "adawd",
+      "JuegoDeSemana": "true",
+      "Consola": "ps5",
+      "id": 16
+    },
+    {
+      "Juego": "Personal reload",
+      "precio": "7.000",
+      "imagen": "https://promart.vteximg.com.br/arquivos/ids/7946727-1000-1000/image-527660da3eee4cdfbc7e835298bd05fb.jpg?v=638495782501830000",
+      "Genero": [
+        "Acción",
+        "Aventura",
+        "Lucha"
+      ],
+      "breve": "adawdawdawd",
+      "amplio": "awdawdawdawdawdawdawdawd",
+      "Desarrollador": "awdawdad",
+      "JuegoDeSemana": "false",
+      "Consola": "ps5",
+      "id": 17
+    },
+    {
+      "Juego": "FC 2024",
+      "precio": "23.000",
+      "imagen": "https://dcdn.mitiendanube.com/stores/131/954/products/f24-ps5-80cc3a38d4777d6cc517007015380163-480-0.png",
+      "Genero": [
+        "Deportes",
+        "Estrategia",
+        "Multijugador"
+      ],
+      "breve": "dasdasdasdasd",
+      "amplio": "adasdasdasdasdasdasdasdas",
+      "Desarrollador": "dsad",
+      "JuegoDeSemana": "false",
+      "Consola": "ps5",
+      "id": 18
+    },
+    {
+      "Juego": "Kena",
+      "precio": "8.000",
+      "imagen": "https://s3.us-east-2.amazonaws.com/ccp-prd-s3-uploads/2022/2/15/19629201dd3ecfd560f69d63b214fc9bf38198b1.jpeg",
+      "Genero": [
+        "Aventura",
+        "Indie"
+      ],
+      "breve": "asdasdasdasdasdasd",
+      "amplio": "asdasdasasdasdasdasdasdasdasda",
+      "Desarrollador": "sadasd",
+      "JuegoDeSemana": "false",
+      "Consola": "ps5",
+      "id": 19
+    },
+    {
+      "Juego": "Sonic Superstar",
+      "precio": "7.000",
+      "imagen": "https://nextgames.com.ar/img/Public/1040/producto-81nheuqztyl-sl1500-8569.jpg",
+      "Genero": [
+        "Aventura",
+        "Carreras",
+        "Indie"
+      ],
+      "breve": "sdadasdasdasd",
+      "amplio": "asdasdasdasddqwdqwdqwdqwd",
+      "Desarrollador": "asdasdasdasd",
+      "JuegoDeSemana": "false",
+      "Consola": "ps5",
+      "id": 20
     }
   ]
 }

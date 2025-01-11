@@ -64,6 +64,10 @@ const Inicio = () => {
     (juego) => juego.Consola === "ps4"
   );
 
+  const juegosFiltradosPS5 = juegosSemanales.filter(
+    (juego) => juego.Consola === "ps5"
+  );
+
   return (
     <div>
       <section>
@@ -187,8 +191,7 @@ const Inicio = () => {
               ref={carouselRef2}
               className="d-flex overflow-auto mt-4 card-container"
             >
-              {juegosFiltradosPS4.length > 0 ? (
-                // Limitamos a los primeros 8 juegos
+              {juegosFiltradosPS4.length > 5 ? (
                 juegosFiltradosPS4.slice(0, 8).map((juego) => (
                   <div className="col-12 col-lg-3 col-md-3 mt-3" key={juego.id}>
                     <Card className="product-card h-100 rounded">
@@ -260,9 +263,8 @@ const Inicio = () => {
               ref={carouselRef3}
               className="d-flex overflow-auto mt-4 card-container"
             >
-              {juegosFiltradosPS4.length > 0 ? (
-                // Limitamos a los primeros 8 juegos
-                juegosFiltradosPS4.slice(0, 8).map((juego) => (
+              {juegosFiltradosPS5.length > 5 ? (
+                juegosFiltradosPS5.slice(0, 8).map((juego) => (
                   <div className="col-12 col-lg-3 col-md-3 mt-3" key={juego.id}>
                     <Card className="product-card h-100 rounded">
                       <Card.Img
