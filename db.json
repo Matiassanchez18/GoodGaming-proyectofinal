@@ -1,23 +1,6 @@
 {
   "productos": [
     {
-      "Juego": "CTR ",
-      "precio": "5.000",
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDgtHw1KIqwlK-TuEz--lWYuTCL9lIyCPUsA&s",
-      "Genero": [
-        "Deportes",
-        "RPG",
-        "Estrategia",
-        "Simulación"
-      ],
-      "breve": "wdadawdawdwa",
-      "amplio": "dawdawdswdawadsdwadwaawdawd",
-      "Desarrollador": "awdawdwddsdawsdwdasd",
-      "JuegoDeSemana": "true",
-      "Consola": "ps4",
-      "id": 4
-    },
-    {
       "Juego": "GOD",
       "precio": "45.000",
       "imagen": "https://http2.mlstatic.com/D_NQ_NP_890564-MLA54008978956_022023-O.webp",
@@ -172,6 +155,7 @@
       "id": 13
     },
     {
+<<<<<<< HEAD
       "Juego": "Spider-Man",
       "precio": "45.000",
       "imagen": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1704385573-81DC-janmJL.jpg?crop=1xw:1xh;center,top&resize=980:*",
@@ -185,6 +169,22 @@
       "Desarrollador": "feadawdawdas",
       "JuegoDeSemana": "false",
       "Consola": "ps5",
+=======
+      "Juego": "Call of Duty ",
+      "precio": "50.000",
+      "imagen": "https://oechsle.vteximg.com.br/arquivos/ids/18829019-800-800/image-0.jpg?v=638639529251000000",
+      "Genero": [
+        "Acción",
+        "Lucha",
+        "Battle Royale",
+        "Multijugador"
+      ],
+      "breve": "wdadawdadawdddwadwadadwad",
+      "amplio": "awdawdawdawdawdawdwadadawdawdadwdadawdadadawdawdadawd",
+      "Desarrollador": "ARK",
+      "JuegoDeSemana": "true",
+      "Consola": "ps4",
+>>>>>>> 7226668efb4e6c31611cad85eeac02bbf7d1ffed
       "id": 14
     }
   ]

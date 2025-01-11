@@ -9,7 +9,8 @@ const RutasAdministrador = () => {
       <Routes>
         <Route path="/" element={<Administrador />} />
         <Route path="/FormularioJuego" element={<FormularioJuego crearProducto={true} />} />
-        <Route path="/editar/:id" element={<FormularioJuego crearProducto={false} />} />
+        <Route path="/FormularioJuego/editar/:id" element={<FormularioJuego crearProducto={false} />} />
+
       </Routes>
     </div>
   );
