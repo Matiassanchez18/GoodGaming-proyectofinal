@@ -35,7 +35,7 @@ const Menu = ({ usuarioLogeado, setusuarioLogeado }) => {
                
                 <NavDropdown.Item as={NavLink} to={"/Juegos"}>Todos</NavDropdown.Item>
                 <NavDropdown.Item as={NavLink} to={"/JuegosPs4"}>Ps4</NavDropdown.Item>
-                <NavDropdown.Item as={NavLink} to={"/Juegos"}>Ps5</NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to={"/JuegosPs5"}>Ps5</NavDropdown.Item>
               </NavDropdown>
               <NavLink className="nav-link" to={"/AcercadeNostros"}>
                 Acerca de Nosotros
