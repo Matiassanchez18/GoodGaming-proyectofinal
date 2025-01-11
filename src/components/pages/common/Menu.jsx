@@ -27,16 +27,16 @@ const Menu = ({ usuarioLogeado, setusuarioLogeado }) => {
           </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            {/* Añadido ms-auto para mover los enlaces al final */}
             <Nav className="ms-auto">
               <NavLink className="nav-link" to={"/"}>
                 Inicio
               </NavLink>
               <NavDropdown title="Juegos" id="basic-nav-dropdown">
-              <NavDropdown.Item ><NavLink className="nav-link" to={"/Juegos"}>Todos</NavLink></NavDropdown.Item>
-              <NavDropdown.Item ><NavLink className="nav-link" to={"/JuegosPs4"}>Ps4</NavLink></NavDropdown.Item>
-              <NavDropdown.Item ><NavLink className="nav-link" to={"/Juegos"}>Ps5</NavLink></NavDropdown.Item>
-            </NavDropdown>
+               
+                <NavDropdown.Item as={NavLink} to={"/Juegos"}>Todos</NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to={"/JuegosPs4"}>Ps4</NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to={"/Juegos"}>Ps5</NavDropdown.Item>
+              </NavDropdown>
               <NavLink className="nav-link" to={"/AcercadeNostros"}>
                 Acerca de Nosotros
               </NavLink>
