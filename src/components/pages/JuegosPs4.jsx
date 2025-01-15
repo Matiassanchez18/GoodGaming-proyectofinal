@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
 import { listarProductosAPI } from "../helpers/queries";
 import { Link } from "react-router";
 
-const Juegos = () => {
+const JuegosPs4 = () => {
   const [Juegos, setJuegos] = useState([]);
   const [JuegosFlitradosBusqueda, setJuegosFlitradosBusqueda] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -22,8 +21,9 @@ const Juegos = () => {
     const respuesta = await listarProductosAPI();
     if (respuesta.status === 200) {
       const datos = await respuesta.json();
-      setJuegos(datos);
-      setJuegosFlitradosBusqueda(datos);
+      const juegosPs4 = datos.filter((juego) => juego.Consola.toLowerCase() === "ps4");
+      setJuegos(juegosPs4);
+      setJuegosFlitradosBusqueda(juegosPs4);
     } else {
       alert("Ocurrió un error, intenta más tarde");
     }
@@ -77,7 +77,6 @@ const Juegos = () => {
                       src={juego.imagen}
                       alt={juego.Juego}
                       className="rounded-top h-100"
-                       
                     />
                     <Card.Body>
                       <ul className="list-unstyled">
@@ -88,15 +87,15 @@ const Juegos = () => {
                           <b>{juego.precio}</b>
                         </li>
                       </ul>
-                      <Link to={"/DetalleProductos/"+juego.id} className="btn btn-primary w-100" >
-                          Ver más
-                        </Link>
+                      <Link to={"/DetalleProductos/" + juego.id} className="btn btn-primary w-100">
+                        Ver más
+                      </Link>
                     </Card.Body>
                   </Card>
                 </div>
               ))
             ) : (
-              <p>No se encontraron juegos</p>
+              <p>No se encontraron juegos de PS4</p>
             )}
           </div>
         )}
@@ -105,6 +104,4 @@ const Juegos = () => {
   );
 };
 
-export default Juegos;
-
-
+export default JuegosPs4;
