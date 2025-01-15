@@ -154,7 +154,7 @@ const FormularioJuego = ({ crearProducto }) => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Categoría del producto*</Form.Label>
+          <Form.Label>Categoría del Juego*</Form.Label>
           <div>
             {[
               "Acción",
